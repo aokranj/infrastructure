@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mail-out-dp
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: mail-out
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mail-out
+    spec:
+      containers:
+      - image: namshi/smtp:latest
+        name: mail-out
+        env:
+        - name: MAILNAME
+          value: "mail-out.aokranj.com"
+        - name: RELAY_NETWORKS
+          value: ":10.0.0.0/8:172.16.0.0/12:192.168.0.0/16:116.203.29.132:116.202.189.251"
+        ports:
+        - containerPort: 25
+          name: smtp

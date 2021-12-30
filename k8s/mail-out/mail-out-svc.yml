@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mail-out-svc
+spec:
+  ports:
+  - port: 25
+  selector:
+    app: mail-out
