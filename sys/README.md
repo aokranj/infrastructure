@@ -39,6 +39,6 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 
 Untaint the master node (to allow it to receive workloads):
 ```
-kubectl taint nodes h1 node-role.kubernetes.io/master-
+kubectl taint nodes host1 node-role.kubernetes.io/master-
 
 ```
