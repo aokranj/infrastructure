@@ -26,8 +26,21 @@ source ~/.cloudflare.env   # zsh
 
 
 
-## Run the Ansible playbook (to configure Cloudflare's DNS service)
+## To verify the Cloudflare configuration
+
+```
+ansible-playbook playbook-cloudflare-aokranj.com.yml --check
+ansible-playbook playbook-cloudflare-pdkranj.si.yml  --check
+```
+
+Caveat - this system does not automatically remove entries configured in Cloudflare
+but missing in these playbooks. Those need to be removed with a `state: absent` flag.
+
+
+
+## Run the Ansible playbook (to apply the configuration to Cloudflare's DNS service)
 
 ```
 ansible-playbook playbook-cloudflare-aokranj.com.yml
+ansible-playbook playbook-cloudflare-pdkranj.si.yml
 ```
