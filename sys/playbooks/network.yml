@@ -1,0 +1,10 @@
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+
+
+  - name: "Configure permanent floating IP addresses"
+    copy:
+      src: files/60-floating-ip.yaml
+      dest: /etc/netplan/60-floating-ip.yaml
