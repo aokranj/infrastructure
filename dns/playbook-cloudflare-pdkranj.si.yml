@@ -78,3 +78,13 @@
             record: 'www'
             type: 'A'
             value: '116.202.189.251'
+
+
+
+    ### Development
+    #
+    -   name: 'stg A'
+        community.general.cloudflare_dns:
+            record: 'stg'
+            type: 'A'
+            value: '116.202.176.170'
