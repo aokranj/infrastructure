@@ -1,0 +1,13 @@
+[Unit]
+Description=Custom port forwarding service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/custom-port-forwarding.sh start
+RemainAfterExit=true
+ExecStop=/root/custom-port-forwarding.sh stop
+StandardOutput=journal
+
+[Install]
+WantedBy=lxc.service
