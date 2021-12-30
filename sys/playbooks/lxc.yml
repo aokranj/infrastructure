@@ -30,6 +30,10 @@
     when: custom_port_forwarding_script.changed or custom_port_forwarding_service.changed
     register: systemd_daemon_reload
 
+  - name: "Enable custom-port-forwarding.service"
+    command: "systemctl enable custom-port-forwarding.service"
+    when: systemd_daemon_reload.changed
+
   - name: "(Re)Start custom-port-forwarding.service"
     command: "systemctl restart custom-port-forwarding.service"
     when: systemd_daemon_reload.changed

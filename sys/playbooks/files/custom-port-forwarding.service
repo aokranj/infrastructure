@@ -10,4 +10,4 @@ ExecStop=/root/custom-port-forwarding.sh stop
 StandardOutput=journal
 
 [Install]
-WantedBy=lxc.service
+WantedBy=multi-user.target
