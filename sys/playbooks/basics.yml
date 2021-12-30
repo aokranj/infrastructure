@@ -1,0 +1,30 @@
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+
+
+#  - name: Print all available facts
+#    ansible.builtin.debug:
+#      var: ansible_facts
+
+
+  - name: "Install basic packages"
+    apt:
+      pkg:
+      - apt-transport-https
+      - bash-completion
+      - ca-certificates
+      - curl
+      - git
+      - gnupg
+      - lsb-release
+      - mc
+      - nano
+      - tig
+
+  - name: "Remove unnecessary packages"
+    apt:
+      pkg:
+      - cowsay   # This one makes ansible output be full of cows, literally.
+      state: absent

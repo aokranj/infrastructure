@@ -1,0 +1,38 @@
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+
+
+  - name: "Add k8s's APT signing key"
+    ansible.builtin.apt_key:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      keyring: /usr/share/keyrings/kubernetes-archive-keyring.gpg
+
+
+  - name: "Add k8s APT repository"
+    ansible.builtin.apt_repository:
+      repo: deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main
+      filename: kubernetes
+
+
+  - name: "Install k8s packages"
+    apt:
+      pkg:
+      - kubelet
+      - kubeadm
+      - kubectl
+
+
+  - name: "Prevent automatic upgrade: kubelet"
+    dpkg_selections:
+      name: kubelet
+      selection: hold
+  - name: "Prevent automatic upgrade: kubeadm"
+    dpkg_selections:
+      name: kubeadm
+      selection: hold
+  - name: "Prevent automatic upgrade: kubectl"
+    dpkg_selections:
+      name: kubectl
+      selection: hold
