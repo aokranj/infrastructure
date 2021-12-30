@@ -1,0 +1,194 @@
+-   name: 'Manage domain: aokranj.com'
+    hosts: localhost
+    #connection: local
+    #become: no
+    gather_facts: no
+
+
+    module_defaults:
+        community.general.cloudflare_dns:
+            account_email: "{{ lookup('env', 'CLOUDFLARE_EMAIL') }}"
+            api_token: "{{ lookup('env', 'CLOUDFLARE_TOKEN') }}"
+            zone: 'aokranj.com'
+            state: present
+            proxied: no
+            ttl: 1
+
+
+
+    tasks:
+
+
+
+    ### MX
+    #
+    -   name: 'aokranj.com MX 1'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 1
+            value: 'aspmx.l.google.com'
+    -   name: 'aokranj.com MX 5 (alt1)'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 5
+            value: 'alt1.aspmx.l.google.com'
+    -   name: 'aokranj.com MX 5 (alt2)'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 5
+            value: 'alt2.aspmx.l.google.com'
+    -   name: 'aokranj.com MX 10 (alt3)'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 10
+            value: 'alt3.aspmx.l.google.com'
+    -   name: 'aokranj.com MX 10 (alt4)'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 10
+            value: 'alt4.aspmx.l.google.com'
+
+
+
+    ### SPF
+    #
+    -   name: '_spf.aokranj.com TXT'
+        community.general.cloudflare_dns:
+            record: '_spf'
+            type: 'TXT'
+            value: 'v=spf1 ip4:116.202.189.251 ip4:116.203.29.132 -all'
+    -   name: 'aokranj.com TXT'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'TXT'
+            value: 'v=spf1 include:_spf.aokranj.com include:_spf.google.com -all'
+
+
+
+    ### Servers & floating IPs
+    #
+    -   name: 'host1.srv A'
+        community.general.cloudflare_dns:
+            record: 'host1.srv'
+            type: 'A'
+            value: '116.203.29.132'
+    -   name: 'host1.srv AAAA'
+        community.general.cloudflare_dns:
+            record: 'host1.srv'
+            type: 'AAAA'
+            value: '2a01:4f8:c0c:de75::1'
+
+    -   name: 'web1.srv A'
+        community.general.cloudflare_dns:
+            record: 'web1.srv'
+            type: 'A'
+            value: '116.202.189.251'
+    -   name: 'web1.srv AAAA'
+        community.general.cloudflare_dns:
+            record: 'web1.srv'
+            type: 'AAAA'
+            value: '2a01:4f8:1c0c:81ee:116:202:189:251'
+
+
+
+    ### Main website
+    #
+    -   name: 'aokranj.com A'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'A'
+            value: '116.202.189.251'
+
+    -   name: 'www A'
+        community.general.cloudflare_dns:
+            record: 'www'
+            type: 'A'
+            value: '116.202.189.251'
+
+
+
+    ### PDK-related
+    #
+    -   name: 'pdk A'
+        community.general.cloudflare_dns:
+            record: 'pdk'
+            type: 'A'
+            value: '195.246.15.175'
+    -   name: 'tekma A'
+        community.general.cloudflare_dns:
+            record: 'tekma'
+            type: 'A'
+            value: '195.246.15.175'
+    -   name: 'fotonatecaj A'
+        community.general.cloudflare_dns:
+            record: 'tekma'
+            type: 'A'
+            value: '195.246.15.175'
+
+
+
+    ### Apps
+    #
+
+    -   name: 'treningi CNAME'
+        community.general.cloudflare_dns:
+            record: 'treningi'
+            type: 'CNAME'
+            value: 'www.aokranj.com'
+
+    -   name: 'zl CNAME'
+        community.general.cloudflare_dns:
+            record: 'zl'
+            type: 'CNAME'
+            value: 'www.aokranj.com'
+    -   name: 'stg.zl CNAME'
+        community.general.cloudflare_dns:
+            record: 'stg.zl'
+            type: 'CNAME'
+            value: 'www.aokranj.com'
+    -   name: 'tools.zl CNAME'
+        community.general.cloudflare_dns:
+            record: 'tools.zl'
+            type: 'CNAME'
+            value: 'www.aokranj.com'
+
+
+
+    ### Development
+    #
+    -   name: 'stg CNAME'
+        community.general.cloudflare_dns:
+            record: 'stg'
+            type: 'CNAME'
+            value: 'www.aokranj.com'
+    -   name: 'dev A'
+        community.general.cloudflare_dns:
+            record: 'dev'
+            type: 'CNAME'
+            value: 'www.aokranj.com'
+    -   name: '*.dev A'
+        community.general.cloudflare_dns:
+            record: '*.dev'
+            type: 'CNAME'
+            value: 'www.aokranj.com'
+
+
+
+    ### Legacy - TODO REMOVE
+    #
+    -   name: 'old CNAME'
+        community.general.cloudflare_dns:
+            record: 'old'
+            type: 'CNAME'
+            value: 'www.aokranj.com'
+
+    -   name: 'ftp CNAME'
+        community.general.cloudflare_dns:
+            record: 'ftp'
+            type: 'CNAME'
+            value: 'www.aokranj.com'

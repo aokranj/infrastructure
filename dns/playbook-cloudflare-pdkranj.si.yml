@@ -1,0 +1,80 @@
+-   name: 'Manage domain: pdkranj.si'
+    hosts: localhost
+    #connection: local
+    #become: no
+    gather_facts: no
+
+
+    module_defaults:
+        community.general.cloudflare_dns:
+            account_email: "{{ lookup('env', 'CLOUDFLARE_EMAIL') }}"
+            api_token: "{{ lookup('env', 'CLOUDFLARE_TOKEN') }}"
+            zone: 'pdkranj.si'
+            state: present
+            proxied: no
+            ttl: 1
+
+
+
+    tasks:
+
+
+
+    ### MX
+    #
+    -   name: 'pdkranj.si MX 1'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 1
+            value: 'aspmx.l.google.com'
+    -   name: 'pdkranj.si MX 5 (alt1)'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 5
+            value: 'alt1.aspmx.l.google.com'
+    -   name: 'pdkranj.si MX 5 (alt2)'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 5
+            value: 'alt2.aspmx.l.google.com'
+    -   name: 'pdkranj.si MX 10 (alt3)'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 10
+            value: 'alt3.aspmx.l.google.com'
+    -   name: 'pdkranj.si MX 10 (alt4)'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'MX'
+            priority: 10
+            value: 'alt4.aspmx.l.google.com'
+
+
+
+    ### SPF
+    #
+    -   name: 'pdkranj.si TXT'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'TXT'
+            value: 'v=spf1 ip4:116.202.189.251 ip4:2.205.36.249 include:_spf.google.com -all'
+
+
+
+    ### Main website
+    #
+    -   name: 'pdkranj.si A'
+        community.general.cloudflare_dns:
+            record: '@'
+            type: 'A'
+            value: '116.202.189.251'
+
+    -   name: 'www A'
+        community.general.cloudflare_dns:
+            record: 'www'
+            type: 'A'
+            value: '116.202.189.251'
