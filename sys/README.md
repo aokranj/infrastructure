@@ -6,9 +6,9 @@
 
 ```
 ansible-playbook playbooks/data.yml
+ansible-playbook playbooks/network.yml
 
 ansible-playbook playbooks/basics.yml
-ansible-playbook playbooks/apache2.yml
 ansible-playbook playbooks/docker.yml
 ansible-playbook playbooks/k8s.yml
 
