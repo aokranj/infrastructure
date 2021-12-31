@@ -1,0 +1,71 @@
+-   hosts: localhost
+    connection: local
+    become: yes
+    gather_facts: no
+    tasks:
+
+
+
+    ### bostjan
+    #
+    -   name: "admin :: bostjan :: group"
+        ansible.builtin.group:
+            name: "bostjan"
+
+    -   name: "admin :: bostjan :: user"
+        ansible.builtin.user:
+            name: "bostjan"
+            password: "$6$x1PnIFC35H/YmESz$18UTz2tl9VnGtiMU8tyVw8.Ew8E0EfdLcS8iJiS.onV1BkuiOF9fq/k0OgQKCyCfoAKlLnafrQ0Y2b7h1.2uw/"
+            group: "bostjan"
+            groups:
+                - "docker"
+                - "sudo"
+
+    -   name: "admin :: bostjan :: .ssh directory"
+        file:
+            path: "/home/bostjan/.ssh"
+            state: directory
+            owner: "bostjan"
+            group: "bostjan"
+            mode: "0700"
+
+    -   name: "admin :: bostjan :: authorized_keys file"
+        copy:
+            src: "ssh-auth-keys/authorized_keys.bostjan"
+            dest: "/home/bostjan/.ssh/authorized_keys"
+            owner: "bostjan"
+            group: "bostjan"
+            mode: "0600"
+
+
+
+    ### janez
+    #
+    -   name: "group: janez"
+        ansible.builtin.group:
+            name: "janez"
+
+    -   name: "admin: janez"
+        ansible.builtin.user:
+            name: "janez"
+            password: "!"
+            group: "janez"
+            groups:
+                - "docker"
+                - "sudo"
+
+    -   name: "admin :: janez :: .ssh directory"
+        file:
+            path: "/home/janez/.ssh"
+            state: directory
+            owner: "janez"
+            group: "janez"
+            mode: "0700"
+
+    -   name: "admin :: janez :: authorized_keys file"
+        copy:
+            src: "ssh-auth-keys/authorized_keys.janez"
+            dest: "/home/janez/.ssh/authorized_keys"
+            owner: "janez"
+            group: "janez"
+            mode: "0600"
