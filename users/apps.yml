@@ -1,0 +1,16 @@
+-   hosts: localhost
+    connection: local
+    become: yes
+    gather_facts: no
+
+
+
+    roles:
+#    -   role: app_user
+#        username: "ao-prod"
+
+#    -   role: app_user
+#        username: "pd-prod"
+
+    -   role: app_user
+        username: "pd-stg"

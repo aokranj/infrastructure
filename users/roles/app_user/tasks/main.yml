@@ -1,0 +1,40 @@
+-   name: "{{username}} : group"
+    ansible.builtin.group:
+        name: "{{username}}"
+
+-   name: "{{username}} : user"
+    ansible.builtin.user:
+        name: "{{username}}"
+        password: "!"
+        group: "{{username}}"
+
+-   name: "{{username}} : .ssh directory"
+    file:
+        path: "/home/{{username}}/.ssh"
+        state: directory
+        owner: "{{username}}"
+        group: "{{username}}"
+        mode: "0700"
+
+-   name: "{{username}} : authorized_keys file"
+    copy:
+        src: "ssh-auth-keys/authorized_keys.{{username}}"
+        dest: "/home/{{username}}/.ssh/authorized_keys"
+        owner: "{{username}}"
+        group: "{{username}}"
+        mode: "0600"
+
+-   name: "{{username}} : data directory /data/{{username}}"
+    file:
+        path: "/data/{{username}}"
+        state: directory
+        owner: "{{username}}"
+        group: "{{username}}"
+        mode: "0755"
+
+-   name: "{{username}} : convenience symlink /home/{{username}}/www -> /data/{{username}}"
+    file:
+        path: "/home/{{username}}/www"
+        src: "/data/{{username}}"
+        state: link
+        force: no
