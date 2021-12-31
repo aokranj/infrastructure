@@ -1,0 +1,13 @@
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+
+
+  - name: "Symlink /data to /var/data"
+    file:
+      path: "/data"
+      src: "/var/data"
+      state: link 
+      force: no
+
