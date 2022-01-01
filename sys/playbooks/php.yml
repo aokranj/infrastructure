@@ -9,6 +9,7 @@
     apt:
       pkg:
       - apache2-utils   # For tools such as htpasswd, ab etc.
+      - mariadb-client  # For mysqldump
       - php
       - php-curl
       - php-gd
