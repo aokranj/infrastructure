@@ -1,0 +1,19 @@
+- hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  tasks:
+
+
+  - name: "Install PHP (for app deployment tasks, not running the apps which is done in k8s)"
+    apt:
+      pkg:
+      - apache2-utils   # For tools such as htpasswd, ab etc.
+      - php
+      - php-curl
+      - php-gd
+      - php-intl
+      - php-mbstring
+      - php-mysql
+      - php-sqlite3
+      - php-xml

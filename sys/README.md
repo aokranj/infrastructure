@@ -11,6 +11,7 @@ ansible-playbook playbooks/network.yml
 ansible-playbook playbooks/basics.yml
 ansible-playbook playbooks/docker.yml
 ansible-playbook playbooks/k8s.yml
+ansible-playbook playbooks/php.yml
 
 # Legacy - TODO REMOVE once migrated to k8s
 ansible-playbook playbooks/lxc.yml
