@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-runtime-httpd-php-dp
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: app-runtime-httpd-php
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: app-runtime-httpd-php
+    spec:
+      volumes:
+      - name: storage-pd-stg-volume
+        persistentVolumeClaim:
+          claimName: storage-pd-stg-pvc
+      containers:
+      - image: app-runtime-httpd-php:latest
+        imagePullPolicy: Never
+        name: app-runtime-httpd-php
+        ports:
+        - containerPort: 80
+          name: http
+        volumeMounts:
+        - name: storage-pd-stg-volume
+          mountPath: /data/pd-stg
