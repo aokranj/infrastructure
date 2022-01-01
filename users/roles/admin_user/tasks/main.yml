@@ -6,6 +6,7 @@
     ansible.builtin.user:
         name: "{{username}}"
         password: "{{password}}"
+        shell: "/bin/bash"
         group: "{{username}}"
         groups:
             - "docker"
