@@ -23,7 +23,8 @@ ENV LANG en_US.utf8
 
 ### Install Apache + PHP (+ modules for both)
 #
-RUN apt-get update && \
+RUN apt-get update \
+    && \
     apt-get install -y \
         libxml2-dev \
         zlib1g-dev \
@@ -36,7 +37,9 @@ RUN apt-get update && \
         php-mbstring \
         php-mysql \
         php-sqlite3 \
-        php-xml && \
+        php-xml \
+        ssmtp \
+    && \
     rm -rf /var/lib/apt/lists/*
 
 
@@ -52,6 +55,7 @@ RUN a2enmod rewrite
 ADD  conf/apache2/sites-enabled /etc/apache2/sites-enabled
 COPY conf/php/prepend.php       /var/lib/php/prepend.php
 COPY conf/php/conf.d            /etc/php/7.4/apache2/conf.d
+COPY conf/ssmtp/ssmtp.conf      /etc/ssmtp/ssmtp.conf
 
 
 
