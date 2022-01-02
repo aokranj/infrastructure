@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb-dp
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: mariadb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      volumes:
+      - name: mariadb-storage
+        persistentVolumeClaim:
+          claimName: mariadb-pvc
+      containers:
+      - image: mariadb:10.5
+        name: mariadb
+        env:
+        # For the first use only, then restart with a random root pw.
+        - name: MYSQL_ROOT_PASSWORD
+          value: tmppass
+        #- name: MYSQL_RANDOM_ROOT_PASSWORD
+        #  value: "yes"
+        ports:
+        - containerPort: 3306
+          name: mariadb
+        volumeMounts:
+        - name: mariadb-storage
+          mountPath: /var/lib/mysql
