@@ -15,6 +15,9 @@ spec:
         app: app-runtime-httpd-php
     spec:
       volumes:
+      - name: storage-pd-dev-volume
+        persistentVolumeClaim:
+          claimName: storage-pd-dev-pvc
       - name: storage-pd-stg-volume
         persistentVolumeClaim:
           claimName: storage-pd-stg-pvc
@@ -26,5 +29,7 @@ spec:
         - containerPort: 80
           name: http
         volumeMounts:
+        - name: storage-pd-dev-volume
+          mountPath: /data/pd-dev
         - name: storage-pd-stg-volume
           mountPath: /data/pd-stg

@@ -6,11 +6,29 @@
 
 
     roles:
+
+
+
+    ### AO
+    #
+#    -   role: app_user
+#        username: "ao-dev"
+
+#    -   role: app_user
+#        username: "ao-stg"
+
 #    -   role: app_user
 #        username: "ao-prod"
 
-#    -   role: app_user
-#        username: "pd-prod"
+
+
+    ### PD
+    #
+    -   role: app_user
+        username: "pd-dev"
 
     -   role: app_user
         username: "pd-stg"
+
+#    -   role: app_user
+#        username: "pd-prod"
