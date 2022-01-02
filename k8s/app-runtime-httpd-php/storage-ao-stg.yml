@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: storage-ao-stg-pv
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 5Gi
+  hostPath:
+    path: "/data/ao-stg"
+  storageClassName: storage-ao-stg-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: storage-ao-stg-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: storage-ao-stg-pv
