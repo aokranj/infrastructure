@@ -9,7 +9,9 @@
     -   role: admin_user
         username: "bostjan"
         password: "$6$x1PnIFC35H/YmESz$18UTz2tl9VnGtiMU8tyVw8.Ew8E0EfdLcS8iJiS.onV1BkuiOF9fq/k0OgQKCyCfoAKlLnafrQ0Y2b7h1.2uw/"
+        fullname: "Bostjan Skufca Jese"
 
     -   role: admin_user
         username: "jnastran"
         password: "!"
+        fullname: "Janez Nastran"

@@ -6,6 +6,7 @@
     ansible.builtin.user:
         name: "{{username}}"
         password: "{{password}}"
+        comment: "{{ fullname | default('') }}"
         shell: "/bin/bash"
         group: "{{username}}"
         groups:
