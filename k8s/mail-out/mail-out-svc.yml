@@ -7,3 +7,4 @@ spec:
   - port: 25
   selector:
     app: mail-out
+  clusterIP: 10.96.0.25

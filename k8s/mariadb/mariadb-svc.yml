@@ -7,3 +7,4 @@ spec:
   - port: 3306
   selector:
     app: mariadb
+  clusterIP: 10.96.33.6

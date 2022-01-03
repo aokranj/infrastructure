@@ -36,3 +36,12 @@
     dpkg_selections:
       name: kubectl
       selection: hold
+
+
+
+
+  - name: "Manage /etc/hosts - add entries for named k8s services"
+    copy:
+      src: files/hosts.debian.tmpl
+      dest: /etc/cloud/templates/hosts.debian.tmpl
+      mode: 0644
