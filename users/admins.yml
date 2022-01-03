@@ -13,5 +13,5 @@
 
     -   role: admin_user
         username: "jnastran"
-        password: "!"
+        password: "$6$a7U9lJgrsh79C19X$/69wUif9hgOSBVxGEB5otJmWIhus32z7KTJ.ButOBrLETIpY3Yx4BGHSE0dHHkc.rHSV8JsobiNjN4WVkq5Wg."
         fullname: "Janez Nastran"
