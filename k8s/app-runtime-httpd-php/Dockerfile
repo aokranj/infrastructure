@@ -46,6 +46,7 @@ RUN apt-get update \
 
 ### Enable modules
 #
+RUN a2enmod info
 RUN a2enmod rewrite
 
 

@@ -11,8 +11,8 @@
 
     ### AO
     #
-#    -   role: app_user
-#        username: "ao-dev"
+    -   role: app_user
+        username: "ao-dev"
 
     -   role: app_user
         username: "ao-stg"

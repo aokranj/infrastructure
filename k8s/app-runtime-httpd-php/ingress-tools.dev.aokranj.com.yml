@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tools-dev-aokranj-com-ing
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    nginx.ingress.kubernetes.io/proxy-body-size: 10m
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: auth-stg-aokranj-com-secret
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - stg.aokranj.com'
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - tools.dev.aokranj.com
+      secretName: certnkey-tools-dev-aokranj-com
+  rules:
+  - host: tools.dev.aokranj.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-runtime-httpd-php-svc
+            port:
+              number: 80

@@ -171,6 +171,11 @@
 
     ### Development
     #
+    -   name: 'tools.dev A'
+        community.general.cloudflare_dns:
+            record: 'tools'
+            type: 'A'
+            value: '116.202.176.170'
     -   name: 'stg A'
         community.general.cloudflare_dns:
             record: 'stg'
