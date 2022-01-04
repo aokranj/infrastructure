@@ -1,0 +1,13 @@
+-   name: "{{dbandusername}} : db"
+    community.mysql.mysql_db:
+        state: "{{ state | default('present') }}"
+        name: "{{dbandusername}}"
+
+-   name: "{{dbandusername}} : user"
+    community.mysql.mysql_user:
+        state: "{{ state | default('present') }}"
+        name: "{{dbandusername}}"
+        host: '%'
+        encrypted: yes
+        password: "{{password}}"
+        priv: "{{dbandusername}}.*:ALL"

@@ -1,0 +1,8 @@
+-   name: "{{username}} : user"
+    community.mysql.mysql_user:
+        state: "{{ state | default('present') }}"
+        name: "{{username}}"
+        host: '%'
+        encrypted: yes
+        password: "{{password}}"
+        priv: "{{ privileges | default('*.*:SELECT,INSERT,UPDATE,DELETE,CREATE,ALTER,DROP,REFERENCES,INDEX,CREATE ROUTINE,CREATE TEMPORARY TABLES,LOCK TABLES,EVENT,CREATE VIEW,SHOW VIEW,TRIGGER,SHOW DATABASES,ALTER ROUTINE,EXECUTE,PROCESS,SUPER,GRANT,CREATE USER') }}"

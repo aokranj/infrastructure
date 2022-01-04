@@ -1,0 +1,87 @@
+-   hosts: localhost
+    connection: local
+    become: no
+    gather_facts: no
+
+
+
+    module_defaults:
+        community.mysql.mysql_db:
+#            login_host: "mariadb-svc"
+            login_host: "10.0.3.21"      # FIXME REMOVE
+        community.mysql.mysql_user:
+#            login_host: "mariadb-svc"
+            login_host: "10.0.3.21"      # FIXME REMOVE
+
+
+
+    roles:
+
+
+
+    ### PD www.pdkranj.si
+    #
+    -   role: app_db_and_user
+        dbandusername: "pd_www_dev_b"
+        password: "*EE53F3921104947F2234D2FC49EE1B79DB4C2ECC"
+
+    -   role: app_db_and_user
+        dbandusername: "pd_www_dev_j"
+        password: "*53A5D0C814AF2860D352D1AB2F1E7A9834C051CE"
+
+    -   role: app_db_and_user
+        dbandusername: "pd_www_stg"
+        password: "*14CF76583DE56EE4DD417CD2CF0BA918A11ED8F6"
+
+    -   role: app_db_and_user
+        dbandusername: "pd_www_prod"
+        password: "*3845D90903E560EC368024196BD67190F14C332F"
+
+
+
+    ### PD knjiga.pdkranj.si
+    #
+    -   role: app_db_and_user
+        dbandusername: "pd_knjiga_dev_j"
+        password: "*8774442E273D9336EBC81BE532C23824601BB6BD"
+
+    -   role: app_db_and_user
+        dbandusername: "pd_knjiga_prod"
+        password: "*EFECBAFFA908B2CE9CCA2E4B5B55B411C3BFA1F9"
+
+
+
+    ### AO www.aokranj.com
+    #
+    -   role: app_db_and_user
+        dbandusername: "ao_www_dev_b"
+        password: "*0D32D69DD65BE2F0ACF499FFD090AB2EDA64F671"
+
+    -   role: app_db_and_user
+        dbandusername: "ao_www_stg"
+        password: "*58ED984F815ABFD00B4C48E07935E49231EE8B1F"
+
+    -   role: app_db_and_user
+        dbandusername: "ao_www_prod"
+        password: "*9D034FA784C78BB6A9B4B1815187067145C86E64"
+
+
+
+    ### AO treningi.aokranj.com
+    #
+# TODO FIXME once we're on the new MariaDB server which supports >16 character usernames
+#    -   role: app_db_and_user
+#        dbandusername: "ao_treningi_dev_b"
+#        password: "*582626239D82553B2E5023905C1BE77569487B1A"
+
+    -   role: app_db_and_user
+        dbandusername: "ao_treningi_prod"
+        password: "*6BAB5C53B694F49533C1A0C32F8845CF8C28D733"
+
+
+
+    ### ZL zl.aokranj.com
+    #
+    -   role: app_db_and_user
+        dbandusername: "zl_prod"
+        password: "*C3B424ED6FA95F593AF5A556CE7F9E373647C422"

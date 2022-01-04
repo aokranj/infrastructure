@@ -20,6 +20,7 @@
       - gnupg
       - lsb-release
       - mc
+      - python3-pymysql   # For Ansible's MySQL management module
       - nano
       - tig
 

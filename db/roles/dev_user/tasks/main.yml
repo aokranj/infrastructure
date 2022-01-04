@@ -1,0 +1,8 @@
+-   name: "{{username}} : user"
+    community.mysql.mysql_user:
+        state: "{{ state | default('present') }}"
+        name: "{{username}}"
+        host: '%'
+        encrypted: yes
+        password: "{{password}}"
+        priv: "{{privileges}}"

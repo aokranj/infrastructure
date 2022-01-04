@@ -1,0 +1,40 @@
+-   hosts: localhost
+    connection: local
+    become: no
+    gather_facts: no
+
+
+
+    module_defaults:
+        community.mysql.mysql_user:
+#            login_host: "mariadb-svc"
+            login_host: "10.0.3.21"      # FIXME REMOVE
+
+
+
+    roles:
+    # Bostjan Skufca Jese
+    -   role: dev_user
+        username: "bostjan"
+        password: "*7E72C261B71874E6F8A73466ED37A49FC55B8C46"
+        privileges:
+            '%\_dev\_%.*': 'ALL'
+            '%\_stg.*': 'ALL'
+            '%\_stg\_%.*': 'ALL'
+            '%\_old.*': 'ALL'
+            '%\_old\_%.*': 'ALL'
+    -   role: dev_user
+        username: "bostjan-prod"
+        password: "*7E72C261B71874E6F8A73466ED37A49FC55B8C46"
+        privileges:
+            '%\_prod.*': 'ALL'
+            '%\_prod\_%.*': 'ALL'
+
+    # Vid Cufar (Zahodna Liga)
+    -   role: dev_user
+        username: "zl_vidcufar"
+        password: "*F08C7876BD520A545FFCAD0FF130FCE7193C0C82"
+        privileges:
+            'zl\_%.*': 'ALL'
+
+
