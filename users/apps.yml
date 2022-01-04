@@ -30,5 +30,5 @@
     -   role: app_user
         username: "pd-stg"
 
-#    -   role: app_user
-#        username: "pd-prod"
+    -   role: app_user
+        username: "pd-prod"

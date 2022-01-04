@@ -24,6 +24,9 @@ spec:
       - name: storage-pd-dev-volume
         persistentVolumeClaim:
           claimName: storage-pd-dev-pvc
+      - name: storage-pd-prod-volume
+        persistentVolumeClaim:
+          claimName: storage-pd-prod-pvc
       - name: storage-pd-stg-volume
         persistentVolumeClaim:
           claimName: storage-pd-stg-pvc
@@ -41,5 +44,7 @@ spec:
           mountPath: /data/ao-stg
         - name: storage-pd-dev-volume
           mountPath: /data/pd-dev
+        - name: storage-pd-prod-volume
+          mountPath: /data/pd-prod
         - name: storage-pd-stg-volume
           mountPath: /data/pd-stg
