@@ -21,6 +21,7 @@
       - lsb-release
       - mc
       - python3-pymysql   # For Ansible's MySQL management module
+      - rsyslog           # `apt autoremove` removed this one for some reason
       - nano
       - tig
 
