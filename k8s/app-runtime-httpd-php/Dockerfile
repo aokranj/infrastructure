@@ -33,11 +33,13 @@ RUN apt-get update \
         libapache2-mod-php7.4 \
         php-curl \
         php-gd \
+        php-imagick \
         php-intl \
         php-mbstring \
         php-mysql \
         php-sqlite3 \
         php-xml \
+        php-zip \
         ssmtp \
     && \
     rm -rf /var/lib/apt/lists/*
