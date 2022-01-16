@@ -9,9 +9,7 @@
         comment: "{{ fullname | default('') }}"
         shell: "/bin/bash"
         group: "{{username}}"
-        groups:
-            - "docker"
-            - "sudo"
+        groups: "{{final_groups}}"
 
 -   name: "{{username}} : .ssh directory"
     file:

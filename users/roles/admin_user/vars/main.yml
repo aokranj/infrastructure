@@ -1,0 +1,5 @@
+default_groups:
+-   "sudo"
+-   "docker"
+additional groups: ""
+final_groups: "{{ default_groups + additional_groups }}"

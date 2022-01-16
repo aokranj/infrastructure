@@ -31,7 +31,7 @@
         state: directory
         owner: "{{username}}"
         group: "{{username}}"
-        mode: "0755"
+        mode: "02775"
 
 -   name: "{{username}} : convenience symlink /home/{{username}}/www -> /data/{{username}}"
     file:

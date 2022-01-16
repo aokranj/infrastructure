@@ -5,11 +5,24 @@
 
 
 
+    vars:
+        # Common definition. Can be overridden for each individual admin below.
+        additional_groups:
+            - "ao-stg"
+            - "ao-prod"
+            - "pd-stg"
+            - "pd-prod"
+
+
+
     roles:
     -   role: admin_user
         username: "bostjan"
         password: "$6$x1PnIFC35H/YmESz$18UTz2tl9VnGtiMU8tyVw8.Ew8E0EfdLcS8iJiS.onV1BkuiOF9fq/k0OgQKCyCfoAKlLnafrQ0Y2b7h1.2uw/"
         fullname: "Bostjan Skufca Jese"
+#        additional_groups:
+#            - "group1"
+#            - "group2"
 
     -   role: admin_user
         username: "jnastran"
