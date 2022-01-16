@@ -13,6 +13,7 @@
     #
     -   role: app_user
         username: "ao-dev"
+        datadir_mode: "0775"   # Skip the directory setgid bit, these are per-user contents
 
     -   role: app_user
         username: "ao-stg"
@@ -26,6 +27,7 @@
     #
     -   role: app_user
         username: "pd-dev"
+        datadir_mode: "0775"   # Skip the directory setgid bit, these are per-user contents
 
     -   role: app_user
         username: "pd-stg"
