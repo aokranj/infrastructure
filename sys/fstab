@@ -1,0 +1,20 @@
+###
+### Keep in sync with github.com:aokranj/infrastrcture
+###
+#
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda3 during installation
+UUID=3c2a83e8-bfe8-4c09-8cab-356f39d55232       /               ext4    errors=remount-ro               0       1
+# /boot/efi was on /dev/sda2 during installation
+UUID=047F-2DF3                                  /boot/efi       vfat    umask=0077                      0       1
+#/dev/disk/by-id/scsi-0HC_Volume_8721952         /data       ext4    discard,nofail,defaults         0       0
+/dev/data-vg1/data-lv1                          /data       ext4    discard,nofail,defaults         0       0
+
+# Disabled because k8s does not support swap presence
+#/swapfile1                                      none            swap    sw                              0       0

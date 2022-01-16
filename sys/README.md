@@ -2,10 +2,15 @@
 
 
 
+## Make sure mounts are in order
+
+There is the [/etc/fstab](fstab) content available in this directory, but it's not applied automatically.
+
+
+
 ## Install all required software
 
 ```
-ansible-playbook playbooks/data.yml
 ansible-playbook playbooks/network.yml
 
 ansible-playbook playbooks/basics.yml
