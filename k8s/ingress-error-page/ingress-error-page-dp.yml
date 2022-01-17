@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-error-page-dp
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: ingress-error-page
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ingress-error-page
+    spec:
+      containers:
+      - image: ingress-error-page:latest
+        imagePullPolicy: Never
+        name: ingress-error-page
+        ports:
+        - containerPort: 80
+          name: http
