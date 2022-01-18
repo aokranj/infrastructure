@@ -68,6 +68,18 @@ EXPOSE 80
 
 
 
+### Create the /run/apache2 directory
+#
+# When creating the default backend (error page), the apache2 did not want to start
+# because the /run/apache2 direcyory was missing. Now, that image is a smaller clone
+# of this one, so something that is installed here creates this directory for us.
+#
+# Therefore, let's keep this `mkdir` here to prevent at least one weird future surprise.
+#
+RUN mkdir -p /run/apache2
+
+
+
 ### Command to start in the container
 #
 # ENVs are here to replace apachectl with apache2, since apachectl does not handle SIGINT.
