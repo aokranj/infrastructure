@@ -184,19 +184,3 @@
             record: 'b.dev'
             type: 'A'
             value: '116.202.176.170'
-
-
-
-    ### Legacy - TODO REMOVE
-    #
-    -   name: 'old CNAME'
-        community.general.cloudflare_dns:
-            record: 'old'
-            type: 'CNAME'
-            value: 'www.aokranj.com'
-
-    -   name: 'ftp CNAME'
-        community.general.cloudflare_dns:
-            record: 'ftp'
-            type: 'CNAME'
-            value: 'www.aokranj.com'
