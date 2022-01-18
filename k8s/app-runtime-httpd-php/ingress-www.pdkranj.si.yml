@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: www-pdkranj-si-ing
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    nginx.ingress.kubernetes.io/proxy-body-size: 10m
+    nginx.ingress.kubernetes.io/default-backend: ingress-error-page-svc
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - www.pdkranj.si
+      secretName: certnkey-www-pdkranj-si
+  rules:
+  - host: www.pdkranj.si
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-runtime-httpd-php-svc
+            port:
+              number: 80
