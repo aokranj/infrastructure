@@ -144,13 +144,6 @@
 
     ### Apps
     #
-
-    -   name: 'treningi CNAME'
-        community.general.cloudflare_dns:
-            record: 'treningi'
-            type: 'CNAME'
-            value: 'www.aokranj.com'
-
     -   name: 'zl CNAME'
         community.general.cloudflare_dns:
             record: 'zl'
