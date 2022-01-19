@@ -46,14 +46,15 @@ RUN apt-get update \
 
 
 
-### Enable modules
+### Manage modules and stock configuration files
 #
-RUN a2enmod info
-RUN a2enmod rewrite
+RUN  a2enmod    info
+RUN  a2enmod    rewrite
+RUN  a2disconf  other-vhosts-access-log
 
 
 
-### Place configuration files into the container
+### Manage our configuration files in the container
 #
 ADD  conf/apache2/sites-enabled /etc/apache2/sites-enabled
 COPY conf/php/prepend.php       /var/lib/php/prepend.php
