@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EntityDescriptor
+    entityID="https://tools.dev.aokranj.com"
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+  <SPSSODescriptor
+      AuthnRequestsSigned="false"
+      WantAssertionsSigned="false"
+      protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <SingleLogoutService
+        Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+        Location="https://tools.dev.aokranj.com/auth/sso/saml/logout" />
+    <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+    <AssertionConsumerService
+        index="0"
+        isDefault="true"
+        Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+        Location="https://tools.dev.aokranj.com/auth/sso/saml/postResponse" />
+  </SPSSODescriptor>
+</EntityDescriptor>
