@@ -1,0 +1,23 @@
+-   hosts: localhost
+    connection: local
+    become: no
+    gather_facts: no
+
+
+
+    module_defaults:
+        community.mysql.mysql_user:
+#            login_host: "mariadb-svc"
+            login_host: "10.0.3.21"      # FIXME REMOVE
+
+
+
+    tasks:
+    -   name: "sys-user : status-logger : user"
+        community.mysql.mysql_user:
+            state: present
+            name: "status-logger"
+            host: '%'
+            encrypted: yes
+            password: "*3B806C61D6A184214CBF58631E64070B2A64AB3C"
+            priv: "*.*:PROCESS"

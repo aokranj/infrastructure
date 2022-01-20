@@ -1,0 +1,34 @@
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+
+
+# Actually already done in basics.yml and php.yml playbooks
+#  - name: "Install required packages"
+#    apt:
+#      pkg:
+#      - curl
+#      - iotop
+#      - lynx
+#      - psmisc
+
+
+  - name: "Install the system status logging script"
+    copy:
+      src: files/my.cnf.status-logger
+      dest: /root/.my.cnf.status-logger
+      mode: 0644
+
+
+  - name: "Install the system status logging script"
+    copy:
+      src: files/log-system-status.sh
+      dest: /root/log-system-status.sh
+      mode: 0755
+
+
+  - name: "Create cron entry for running the system status logging script"
+    ansible.builtin.cron:
+      name: "System status logging"
+      job: "/root/log-system-status.sh"

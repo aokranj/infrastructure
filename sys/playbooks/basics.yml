@@ -18,7 +18,10 @@
       - curl
       - git
       - gnupg
+      - htop
+      - iotop
       - lsb-release
+      - lynx
       - mc
       - python3-pymysql   # For Ansible's MySQL management module
       - rsyslog           # `apt autoremove` removed this one for some reason
