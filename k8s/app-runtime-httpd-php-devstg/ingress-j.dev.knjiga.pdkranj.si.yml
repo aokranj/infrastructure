@@ -1,25 +1,28 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: b-dev-pdkranj-si-ing
+  name: j-dev-knjiga-pdkranj-si-ing
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
     nginx.ingress.kubernetes.io/default-backend: ingress-error-page-svc
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: auth-stg-pdkranj-si-secret
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - stg.pdkranj.si'
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - b.dev.pdkranj.si
-      secretName: certnkey-b-dev-pdkranj-si
+      - j.dev.knjiga.pdkranj.si
+      secretName: certnkey-j-dev-knjiga-pdkranj-si
   rules:
-  - host: b.dev.pdkranj.si
+  - host: j.dev.knjiga.pdkranj.si
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: app-runtime-httpd-php-svc
+            name: app-runtime-httpd-php-devstg-svc
             port:
               number: 80
