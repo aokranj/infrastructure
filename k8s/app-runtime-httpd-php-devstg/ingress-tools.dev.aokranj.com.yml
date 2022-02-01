@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: j-dev-pdkranj-si-ing
+  name: tools-dev-aokranj-com-ing
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
@@ -10,16 +10,16 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - j.dev.pdkranj.si
-      secretName: certnkey-j-dev-pdkranj-si
+      - tools.dev.aokranj.com
+      secretName: certnkey-tools-dev-aokranj-com
   rules:
-  - host: j.dev.pdkranj.si
+  - host: tools.dev.aokranj.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: app-runtime-httpd-php-svc
+            name: app-runtime-httpd-php-devstg-svc
             port:
               number: 80

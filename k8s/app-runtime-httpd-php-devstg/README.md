@@ -1,6 +1,6 @@
 # HTTPD+PHP Application Runtime
 
-This is the container that runs all our PHP apps (for now).
+This is the container that runs all our _development/staging_ PHP apps (for now).
 
 
 
@@ -11,10 +11,10 @@ First, build the new Docker image:
 ./build.sh
 ```
 
-Then, since the `app-runtime-httpd-php-dp` deployment already exists, just delete
+Then, since the `app-runtime-httpd-php-devstg-dp` deployment already exists, just delete
 the corresponding pod and k8s will create a new pod from the newly built image:
 ```
-kubectl delete pod app-runtime-httpd-php-...`
+kubectl delete pod app-runtime-httpd-php-devstg-...`
 ```
 
 You can observe the status of pod creation like this:

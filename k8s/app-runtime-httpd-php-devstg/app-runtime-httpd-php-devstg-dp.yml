@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-runtime-httpd-php-dp
+  name: app-runtime-httpd-php-devstg-dp
 spec:
   revisionHistoryLimit: 0
   selector:
     matchLabels:
-      app: app-runtime-httpd-php
+      app: app-runtime-httpd-php-devstg
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: app-runtime-httpd-php
+        app: app-runtime-httpd-php-devstg
     spec:
       volumes:
       - name: storage-ao-dev-volume
@@ -24,16 +24,13 @@ spec:
       - name: storage-pd-dev-volume
         persistentVolumeClaim:
           claimName: storage-pd-dev-pvc
-      - name: storage-pd-prod-volume
-        persistentVolumeClaim:
-          claimName: storage-pd-prod-pvc
       - name: storage-pd-stg-volume
         persistentVolumeClaim:
           claimName: storage-pd-stg-pvc
       containers:
-      - image: app-runtime-httpd-php:latest
+      - image: app-runtime-httpd-php:devstg-latest
         imagePullPolicy: Never
-        name: app-runtime-httpd-php
+        name: app-runtime-httpd-php-devstg
         ports:
         - containerPort: 80
           name: http
@@ -44,7 +41,5 @@ spec:
           mountPath: /data/ao-stg
         - name: storage-pd-dev-volume
           mountPath: /data/pd-dev
-        - name: storage-pd-prod-volume
-          mountPath: /data/pd-prod
         - name: storage-pd-stg-volume
           mountPath: /data/pd-stg

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-runtime-httpd-php-prod-dp
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: app-runtime-httpd-php-prod
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: app-runtime-httpd-php-prod
+    spec:
+      volumes:
+      - name: storage-pd-prod-volume
+        persistentVolumeClaim:
+          claimName: storage-pd-prod-pvc
+      containers:
+      - image: app-runtime-httpd-php:prod-latest
+        imagePullPolicy: Never
+        name: app-runtime-httpd-php-prod
+        ports:
+        - containerPort: 80
+          name: http
+        volumeMounts:
+        - name: storage-pd-prod-volume
+          mountPath: /data/pd-prod

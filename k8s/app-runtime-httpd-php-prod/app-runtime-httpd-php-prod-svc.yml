@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-runtime-httpd-php-svc
+  name: app-runtime-httpd-php-prod-svc
 spec:
   ports:
   - port: 80
   selector:
-    app: app-runtime-httpd-php
+    app: app-runtime-httpd-php-prod
