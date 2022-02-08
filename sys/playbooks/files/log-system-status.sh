@@ -38,4 +38,8 @@ echo 'SHOW FULL PROCESSLIST' | mysql --defaults-file=/root/.my.cnf.status-logger
 
 # Apache HTTPD status
 STATUSURL="https://stg.aokranj.com/sys/server-status"
-curl -s $STATUSURL | lynx -stdin -dump -width=256 > $TARGETDIR/apache-$TIMESTAMP
+curl -s $STATUSURL | lynx -stdin -dump -width=256 > $TARGETDIR/apache-devstg-$TIMESTAMP
+
+#STATUSURL="https://www.aokranj.com/sys/server-status"
+STATUSURL="https://www.pdkranj.si/sys/server-status"
+curl -s $STATUSURL | lynx -stdin -dump -width=256 > $TARGETDIR/apache-prod-$TIMESTAMP
