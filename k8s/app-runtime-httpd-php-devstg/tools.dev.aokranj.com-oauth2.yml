@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tools-dev-aokranj-com-oauth2-dp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tools-dev-aokranj-com-oauth2
+  template:
+    metadata:
+      labels:
+        app: tools-dev-aokranj-com-oauth2
+    spec:
+      containers:
+      - args:
+        - --provider=github
+        - --email-domain=*
+        - --github-org=aokranj
+        - --upstream=file:///dev/null
+        - --http-address=0.0.0.0:4180
+        env:
+        - name: OAUTH2_PROXY_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: tools-dev-aokranj-com-oauth2-secret
+              key: client-id
+        - name: OAUTH2_PROXY_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: tools-dev-aokranj-com-oauth2-secret
+              key: client-secret
+        - name: OAUTH2_PROXY_COOKIE_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: tools-dev-aokranj-com-oauth2-secret
+              key: cookie-secret
+        image: quay.io/oauth2-proxy/oauth2-proxy:latest
+        imagePullPolicy: Always
+        name: tools-dev-aokranj-com-oauth2
+        ports:
+        - containerPort: 4180
+          protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: tools-dev-aokranj-com-oauth2-svc
+spec:
+  ports:
+  - name: http
+    port: 4180
+    protocol: TCP
+    targetPort: 4180
+  selector:
+    app: tools-dev-aokranj-com-oauth2

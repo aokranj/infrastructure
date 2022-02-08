@@ -29,7 +29,6 @@ RUN apt-get update \
         libxml2-dev \
         zlib1g-dev \
         apache2 \
-        libapache2-mod-auth-mellon \
         libapache2-mod-php7.4 \
         php-curl \
         php-gd \

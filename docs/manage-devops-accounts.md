@@ -9,9 +9,8 @@
 Things to do when adding a new admin:
 - System user: add to [users/admins.yml](../users/admins.yml) playbook
 - MariaDB user: Add to [MySQL/MariaDB user](../db/admins.yml) playbook
-- Add them to our GitHub organization
-  - Add them to `everyone` team in our GitHub org
-- Add them to `devops@aokranj.com` ("Web infrastructure developers & admins") group in Google Workspace (for https://tools.dev.aokranj.com/ access)
+- Add them to our GitHub organization `aokranj`:
+  - Add them to the `everyone` team too
 
 
 
