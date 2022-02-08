@@ -4,6 +4,8 @@ metadata:
   name: tools-dev-aokranj-com-ing
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
+    nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
     nginx.ingress.kubernetes.io/default-backend: ingress-error-page-svc
 spec:
@@ -23,3 +25,27 @@ spec:
             name: app-runtime-httpd-php-devstg-svc
             port:
               number: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tools-dev-aokranj-com-oauth2-ing
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - tools.dev.aokranj.com
+      secretName: certnkey-tools-dev-aokranj-com
+  rules:
+  - host: tools.dev.aokranj.com
+    http:
+      paths:
+      - path: /oauth2
+        pathType: Prefix
+        backend:
+          service:
+            name: tools-dev-aokranj-com-oauth2-svc
+            port:
+              number: 4180
