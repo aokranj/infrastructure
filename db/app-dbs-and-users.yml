@@ -67,19 +67,6 @@
 
 
 
-    ### AO treningi.aokranj.com
-    #
-# TODO FIXME once we're on the new MariaDB server which supports >16 character usernames
-#    -   role: app_db_and_user
-#        dbandusername: "ao_treningi_dev_b"
-#        password: "*582626239D82553B2E5023905C1BE77569487B1A"
-
-    -   role: app_db_and_user
-        dbandusername: "ao_treningi_prod"
-        password: "*6BAB5C53B694F49533C1A0C32F8845CF8C28D733"
-
-
-
     ### ZL zl.aokranj.com
     #
     -   role: app_db_and_user
