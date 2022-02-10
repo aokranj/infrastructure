@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zl-aokranj-com-ing
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    nginx.ingress.kubernetes.io/proxy-body-size: 10m
+    nginx.ingress.kubernetes.io/default-backend: ingress-error-page-svc
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - zl.aokranj.com
+      secretName: certnkey-zl-aokranj-com
+  rules:
+  - host: zl.aokranj.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            # name: app-runtime-httpd-php-prod-svc
+            name: external-ip
+            port:
+              number: 80
