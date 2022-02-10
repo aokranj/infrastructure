@@ -34,3 +34,13 @@
 
     -   role: app_user
         username: "pd-prod"
+
+
+
+    ### ZL
+    #
+    -   role: app_user
+        username: "zl-stg"
+
+    -   role: app_user
+        username: "zl-prod"

@@ -142,23 +142,18 @@
 
 
 
-    ### Apps
+    ### Zahodna liga / zl
     #
     -   name: 'zl CNAME'
         community.general.cloudflare_dns:
             record: 'zl'
             type: 'CNAME'
             value: 'www.aokranj.com'
-    -   name: 'stg.zl CNAME'
+    -   name: 'stg.zl A'
         community.general.cloudflare_dns:
             record: 'stg.zl'
-            type: 'CNAME'
-            value: 'www.aokranj.com'
-    -   name: 'tools.zl CNAME'
-        community.general.cloudflare_dns:
-            record: 'tools.zl'
-            type: 'CNAME'
-            value: 'www.aokranj.com'
+            type: 'A'
+            value: '116.202.176.170'
 
 
 

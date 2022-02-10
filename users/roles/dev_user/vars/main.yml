@@ -1,0 +1,3 @@
+#default_groups:
+#additional groups:
+final_groups: "{{ default_groups|default([]) + additional_groups|default([]) }}"

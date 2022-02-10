@@ -70,5 +70,9 @@
     ### ZL zl.aokranj.com
     #
     -   role: app_db_and_user
+        dbandusername: "zl_stg"
+        password: "*7999D0699779D36B8F652106550BAF61406F8EC9"
+
+    -   role: app_db_and_user
         dbandusername: "zl_prod"
         password: "*C3B424ED6FA95F593AF5A556CE7F9E373647C422"

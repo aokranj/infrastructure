@@ -30,10 +30,10 @@
             '%\_prod.*': 'ALL'
             '%\_prod\_%.*': 'ALL'
 
-    # Vid Cufar (Zahodna Liga)
+    # Gregor Kokalj (Zahodna liga)
     -   role: dev_user
-        username: "zl_vidcufar"
-        password: "*F08C7876BD520A545FFCAD0FF130FCE7193C0C82"
+        username: "gregork"
+        password: "*5B724C782420E4A11CDDC4EC1A9CFDE852FF01D0"
         privileges:
             'zl\_%.*': 'ALL'
 

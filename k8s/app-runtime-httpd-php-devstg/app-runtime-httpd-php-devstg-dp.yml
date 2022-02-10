@@ -27,6 +27,9 @@ spec:
       - name: storage-pd-stg-volume
         persistentVolumeClaim:
           claimName: storage-pd-stg-pvc
+      - name: storage-zl-stg-volume
+        persistentVolumeClaim:
+          claimName: storage-zl-stg-pvc
       containers:
       - image: app-runtime-httpd-php:devstg-latest
         imagePullPolicy: Never
@@ -43,3 +46,5 @@ spec:
           mountPath: /data/pd-dev
         - name: storage-pd-stg-volume
           mountPath: /data/pd-stg
+        - name: storage-zl-stg-volume
+          mountPath: /data/zl-stg

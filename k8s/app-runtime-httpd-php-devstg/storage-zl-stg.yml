@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: storage-zl-stg-pv
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: "/data/zl-stg"
+  storageClassName: storage-zl-stg-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: storage-zl-stg-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: storage-zl-stg-pv

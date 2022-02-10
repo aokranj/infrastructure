@@ -1,0 +1,28 @@
+-   name: "{{username}} : group"
+    ansible.builtin.group:
+        name: "{{username}}"
+
+-   name: "{{username}} : user"
+    ansible.builtin.user:
+        name: "{{username}}"
+        password: "{{password}}"
+        comment: "{{ fullname | default('') }}"
+        shell: "/bin/bash"
+        group: "{{username}}"
+        groups: "{{final_groups}}"
+
+-   name: "{{username}} : .ssh directory"
+    file:
+        path: "/home/{{username}}/.ssh"
+        state: directory
+        owner: "{{username}}"
+        group: "{{username}}"
+        mode: "0700"
+
+-   name: "{{username}} : authorized_keys file"
+    copy:
+        src: "ssh-auth-keys/authorized_keys.{{username}}"
+        dest: "/home/{{username}}/.ssh/authorized_keys"
+        owner: "{{username}}"
+        group: "{{username}}"
+        mode: "0600"
