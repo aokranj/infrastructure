@@ -57,6 +57,8 @@ RUN  a2disconf  other-vhosts-access-log
 ### Manage our configuration files in the container
 #
 ADD  conf/apache2/sites-enabled /etc/apache2/sites-enabled
+COPY conf/php/opcache.php       /var/lib/php/opcache.php
+COPY conf/php/phpinfo.php       /var/lib/php/phpinfo.php
 COPY conf/php/prepend.php       /var/lib/php/prepend.php
 COPY conf/php/conf.d            /etc/php/7.4/apache2/conf.d
 COPY conf/ssmtp/ssmtp.conf      /etc/ssmtp/ssmtp.conf

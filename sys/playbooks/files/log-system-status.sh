@@ -37,9 +37,9 @@ iotop -n2 -b -o >  $TARGETDIR/iotop-$TIMESTAMP
 echo 'SHOW FULL PROCESSLIST' | mysql --defaults-file=/root/.my.cnf.status-logger > $TARGETDIR/mysql-$TIMESTAMP
 
 # Apache HTTPD status
-STATUSURL="https://stg.aokranj.com/sys/server-status"
+STATUSURL="https://stg.aokranj.com/sys/apache/status"
 curl -s $STATUSURL | lynx -stdin -dump -width=256 > $TARGETDIR/apache-devstg-$TIMESTAMP
 
-#STATUSURL="https://www.aokranj.com/sys/server-status"
-STATUSURL="https://www.pdkranj.si/sys/server-status"
+#STATUSURL="https://www.aokranj.com/sys/apache/status"
+STATUSURL="https://www.pdkranj.si/sys/apache/status"
 curl -s $STATUSURL | lynx -stdin -dump -width=256 > $TARGETDIR/apache-prod-$TIMESTAMP
