@@ -15,6 +15,9 @@ spec:
         app: app-runtime-httpd-php-prod
     spec:
       volumes:
+      - name: storage-ao-prod-volume
+        persistentVolumeClaim:
+          claimName: storage-ao-prod-pvc
       - name: storage-pd-prod-volume
         persistentVolumeClaim:
           claimName: storage-pd-prod-pvc
@@ -28,3 +31,5 @@ spec:
         volumeMounts:
         - name: storage-pd-prod-volume
           mountPath: /data/pd-prod
+        - name: storage-ao-prod-volume
+          mountPath: /data/ao-prod
