@@ -61,7 +61,7 @@
         community.general.cloudflare_dns:
             record: '_spf'
             type: 'TXT'
-            value: 'v=spf1 ip4:116.202.189.251 ip4:116.203.29.132 -all'
+            value: 'v=spf1 ip4:116.203.29.132 ip4:116.202.176.170 -all'
     -   name: 'aokranj.com TXT'
         community.general.cloudflare_dns:
             record: '@'
@@ -82,17 +82,6 @@
             record: 'host1.srv'
             type: 'AAAA'
             value: '2a01:4f8:c0c:de75::1'
-
-    -   name: 'web1.srv A'
-        community.general.cloudflare_dns:
-            record: 'web1.srv'
-            type: 'A'
-            value: '116.202.189.251'
-    -   name: 'web1.srv AAAA'
-        community.general.cloudflare_dns:
-            record: 'web1.srv'
-            type: 'AAAA'
-            value: '2a01:4f8:1c0c:81ee:116:202:189:251'
 
 
 

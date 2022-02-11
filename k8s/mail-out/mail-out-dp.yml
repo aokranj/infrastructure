@@ -21,7 +21,7 @@ spec:
         - name: MAILNAME
           value: "mail-out.aokranj.com"
         - name: RELAY_NETWORKS
-          value: ":10.0.0.0/8:172.16.0.0/12:192.168.0.0/16:116.203.29.132:116.202.189.251"
+          value: ":10.0.0.0/8:172.16.0.0/12:192.168.0.0/16:116.203.29.132:116.202.176.170"
         ports:
         - containerPort: 25
           name: smtp
