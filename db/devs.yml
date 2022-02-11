@@ -7,8 +7,7 @@
 
     module_defaults:
         community.mysql.mysql_user:
-#            login_host: "mariadb-svc"
-            login_host: "10.0.3.21"      # FIXME REMOVE
+            login_host: "mariadb-svc"
 
 
 

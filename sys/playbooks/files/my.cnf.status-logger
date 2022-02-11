@@ -1,5 +1,4 @@
 [client]
-;host = mariadb-svc
-host = 10.0.3.21
+host = mariadb-svc
 user = status-logger
 password=status-logger
