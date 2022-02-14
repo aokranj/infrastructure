@@ -19,7 +19,7 @@ spec:
         persistentVolumeClaim:
           claimName: mariadb-pvc
       containers:
-      - image: mariadb:10.5
+      - image: aokranj/mariadb:10.5-latest
         name: mariadb
         env:
         # For the first use only, then restart with a random root pw.
