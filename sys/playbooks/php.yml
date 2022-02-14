@@ -18,3 +18,11 @@
       - php-mysql
       - php-sqlite3
       - php-xml
+      - php-zip
+
+
+  - name: "PHP :: Install composer"
+    copy:
+      src: files/composer
+      dest: /usr/local/bin/composer
+      mode: 0755
