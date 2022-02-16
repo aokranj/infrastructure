@@ -4,6 +4,7 @@ metadata:
   name: www-pdkranj-si-ing
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
     nginx.ingress.kubernetes.io/default-backend: ingress-error-page-svc
 spec:
@@ -11,6 +12,7 @@ spec:
   tls:
     - hosts:
       - www.pdkranj.si
+      - pdkranj.si
       secretName: certnkey-www-pdkranj-si
   rules:
   - host: www.pdkranj.si

@@ -4,6 +4,7 @@ metadata:
   name: www-aokranj-com-ing
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
     nginx.ingress.kubernetes.io/default-backend: ingress-error-page-svc
 spec:
@@ -11,6 +12,7 @@ spec:
   tls:
     - hosts:
       - www.aokranj.com
+      - aokranj.com
       secretName: certnkey-www-aokranj-com
   rules:
   - host: www.aokranj.com
