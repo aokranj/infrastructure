@@ -9,6 +9,11 @@
 #      var: ansible_facts
 
 
+  - name: "Add git's PPA (for installing latest git versions"
+    ansible.builtin.apt_repository:
+      repo: 'ppa:git-core/ppa'
+      filename: 'git'
+
   - name: "Install basic packages"
     apt:
       pkg:
