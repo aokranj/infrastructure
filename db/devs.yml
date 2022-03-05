@@ -35,5 +35,4 @@
         password: "*5B724C782420E4A11CDDC4EC1A9CFDE852FF01D0"
         privileges:
             'zl\_%.*': 'ALL'
-
-
+        state: absent   # Confirmed via email he doesn't need this user

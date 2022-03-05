@@ -20,7 +20,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            # name: app-runtime-httpd-php-prod-svc
-            name: external-ip
+            name: app-runtime-httpd-php-prod-svc
             port:
               number: 80
