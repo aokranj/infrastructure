@@ -82,6 +82,20 @@ RUN mkdir -p /run/apache2
 
 
 
+### Fix /var/lib/php/sessions permissions
+#
+# On Debian/Ubuntu, PHP's internal session garbage collection (GC) is turned off
+# and a periodic cron is used instead. But since in the Docker container no other
+# process than Apache is running, we need to re-enable built-in session GC.
+#
+# However, since Debian/Ubuntu committed to the 3rd party GC method, they removed
+# the directory read permission for sessions directory. We need to revert that
+# to have the PHP's session GC working as intended.
+#
+RUN chmod 01777 /var/lib/php/sessions
+
+
+
 ### Command to start in the container
 #
 # ENVs are here to replace apachectl with apache2, since apachectl does not handle SIGINT.
