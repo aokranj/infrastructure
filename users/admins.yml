@@ -5,6 +5,11 @@
 
 
 
+    vars_files:
+        -   secrets.yml
+
+
+
     vars:
         # Common definition. Can be overridden for each individual admin below.
         additional_groups:
@@ -18,13 +23,17 @@
     roles:
     -   role: admin_user
         username: "bostjan"
-        password: "$6$x1PnIFC35H/YmESz$18UTz2tl9VnGtiMU8tyVw8.Ew8E0EfdLcS8iJiS.onV1BkuiOF9fq/k0OgQKCyCfoAKlLnafrQ0Y2b7h1.2uw/"
+        password: "{{password_hash.sys.bostjan}}"
         fullname: "Bostjan Skufca Jese"
-#        additional_groups:
-#            - "group1"
-#            - "group2"
+        additional_groups:
+            - "ao-stg"
+            - "ao-prod"
+            - "pd-stg"
+            - "pd-prod"
+            - "zl-stg"
+            - "zl-prod"
 
     -   role: admin_user
         username: "jnastran"
-        password: "$6$a7U9lJgrsh79C19X$/69wUif9hgOSBVxGEB5otJmWIhus32z7KTJ.ButOBrLETIpY3Yx4BGHSE0dHHkc.rHSV8JsobiNjN4WVkq5Wg."
+        password: "{{password_hash.sys.jnastran}}"
         fullname: "Janez Nastran"

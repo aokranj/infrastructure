@@ -1,8 +1,15 @@
 - hosts: localhost
   connection: local
   become: yes
-  tasks:
 
+
+
+  vars_files:
+  -   secrets.yml
+
+
+
+  tasks:
 
 # Actually already done in basics.yml and php.yml playbooks
 #  - name: "Install required packages"
@@ -14,8 +21,8 @@
 #      - psmisc
 
 
-  - name: "Install the system status logging script"
-    copy:
+  - name: "Create MySQL/MariaDB .my.cnf file"
+    ansible.builtin.template:
       src: files/my.cnf.status-logger
       dest: /root/.my.cnf.status-logger
       mode: 0644

@@ -21,12 +21,6 @@ spec:
       containers:
       - image: aokranj/mariadb:10.5-latest
         name: mariadb
-        env:
-        # For the first use only, then restart with a random root pw.
-        - name: MYSQL_ROOT_PASSWORD
-          value: tmppass
-        #- name: MYSQL_RANDOM_ROOT_PASSWORD
-        #  value: "yes"
         ports:
         - containerPort: 3306
           name: mariadb

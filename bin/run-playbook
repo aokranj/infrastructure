@@ -1,0 +1,4 @@
+#!/bin/bash
+
+MY_DIR=`dirname "$0"`
+ansible-playbook --vault-id default@$MY_DIR/../libexec/get-vault-pass $@

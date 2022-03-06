@@ -5,7 +5,7 @@
 ## Check if all accounts are set up as intended
 
 ```
-ansible-playbook admins.yml --check
+../bin/run-playbook admins.yml --check
 ```
 
 
@@ -13,7 +13,7 @@ ansible-playbook admins.yml --check
 ## Set up all user accounts
 
 ```
-ansible-playbook admins.yml
+../bin/run-playbook admins.yml
 ```
 
 

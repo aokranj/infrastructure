@@ -5,6 +5,11 @@
 
 
 
+    vars_files:
+        -   secrets.yml
+
+
+
     module_defaults:
         community.mysql.mysql_user:
             login_host: "mariadb-svc"
@@ -18,5 +23,5 @@
             name: "status-logger"
             host: '%'
             encrypted: yes
-            password: "*3B806C61D6A184214CBF58631E64070B2A64AB3C"
+            password: "{{password_hash.mysql.sys.status_logger}}"
             priv: "*.*:PROCESS"

@@ -16,6 +16,6 @@ password =
 
 Then run the playbooks:
 ```
-ansible-playbook admins.yml
-ansible-playbook app-db-and-users.yml
+../bin/run-playbook admins.yml
+../bin/run-playbook app-db-and-users.yml
 ```

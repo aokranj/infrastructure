@@ -1,4 +1,4 @@
 [client]
-host = mariadb-svc
-user = status-logger
-password=status-logger
+host     = mariadb-svc
+user     = status-logger
+password = {{ password.mysql.status_logger }}

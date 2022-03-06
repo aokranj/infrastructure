@@ -18,6 +18,8 @@ ansible-playbook playbooks/docker.yml
 ansible-playbook playbooks/k8s.yml
 ansible-playbook playbooks/php.yml
 ansible-playbook playbooks/security.yml
+
+../bin/run-playbook playbooks/status-logging.yml
 ```
 
 

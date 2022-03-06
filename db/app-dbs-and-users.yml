@@ -5,6 +5,11 @@
 
 
 
+    vars_files:
+        -   secrets.yml
+
+
+
     module_defaults:
         community.mysql.mysql_db:
             login_host: "mariadb-svc"
@@ -21,19 +26,19 @@
     #
     -   role: app_db_and_user
         dbandusername: "pd_www_dev_b"
-        password: "*EE53F3921104947F2234D2FC49EE1B79DB4C2ECC"
+        password: "{{password_hash.mysql.app.pd_www_dev_b}}"
 
     -   role: app_db_and_user
         dbandusername: "pd_www_dev_j"
-        password: "*53A5D0C814AF2860D352D1AB2F1E7A9834C051CE"
+        password: "{{password_hash.mysql.app.pd_www_dev_j}}"
 
     -   role: app_db_and_user
         dbandusername: "pd_www_stg"
-        password: "*14CF76583DE56EE4DD417CD2CF0BA918A11ED8F6"
+        password: "{{password_hash.mysql.app.pd_www_stg}}"
 
     -   role: app_db_and_user
         dbandusername: "pd_www_prod"
-        password: "*3845D90903E560EC368024196BD67190F14C332F"
+        password: "{{password_hash.mysql.app.pd_www_prod}}"
 
 
 
@@ -41,11 +46,11 @@
     #
     -   role: app_db_and_user
         dbandusername: "pd_knjiga_dev_j"
-        password: "*8774442E273D9336EBC81BE532C23824601BB6BD"
+        password: "{{password_hash.mysql.app.pd_knjiga_dev_j}}"
 
     -   role: app_db_and_user
         dbandusername: "pd_knjiga_prod"
-        password: "*EFECBAFFA908B2CE9CCA2E4B5B55B411C3BFA1F9"
+        password: "{{password_hash.mysql.app.pd_knjiga_prod}}"
 
 
 
@@ -53,15 +58,15 @@
     #
     -   role: app_db_and_user
         dbandusername: "ao_www_dev_b"
-        password: "*0D32D69DD65BE2F0ACF499FFD090AB2EDA64F671"
+        password: "{{password_hash.mysql.app.ao_www_dev_b}}"
 
     -   role: app_db_and_user
         dbandusername: "ao_www_stg"
-        password: "*58ED984F815ABFD00B4C48E07935E49231EE8B1F"
+        password: "{{password_hash.mysql.app.ao_www_stg}}"
 
     -   role: app_db_and_user
         dbandusername: "ao_www_prod"
-        password: "*9D034FA784C78BB6A9B4B1815187067145C86E64"
+        password: "{{password_hash.mysql.app.ao_www_prod}}"
 
 
 
@@ -69,8 +74,8 @@
     #
     -   role: app_db_and_user
         dbandusername: "zl_stg"
-        password: "*7999D0699779D36B8F652106550BAF61406F8EC9"
+        password: "{{password_hash.mysql.app.zl_stg}}"
 
     -   role: app_db_and_user
         dbandusername: "zl_prod"
-        password: "*154096FE2CE29C8ADDD02D6989FBB5C456442F96"
+        password: "{{password_hash.mysql.app.zl_prod}}"

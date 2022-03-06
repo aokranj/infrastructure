@@ -1,0 +1,31 @@
+#!/bin/bash
+
+
+
+#
+# A tool for fetching vault's password
+#
+# This tool fetches the vault password to decrypt Ansible secrets.
+# In the future, this tool may potentially look at multiple locations to get the password.
+#
+# However, as of right now, it only has one option:
+# - Fetch the password via a sudo command on the host1.srv.aokranj.com server
+#     (The password is stored in a root.root-owned file on the server.)
+#
+
+
+
+### If we're running on host1, try to get it from root
+#
+MY_HOSTNAME=`hostname -f`
+if [[ "$MY_HOSTNAME" == "host1.srv.aokranj.com" ]] ; then
+    sudo /infrastructure-private/libexec/show-vault-pass
+    exit $?
+fi
+
+
+
+### Exit with error if this place is reached
+#
+>&2 echo "ERROR: Unable to get vault password"
+exit 1
