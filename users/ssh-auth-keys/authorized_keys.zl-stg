@@ -1,4 +1,3 @@
-#
-# This file is managed via Ansible.
-# The canonical version of this file is stored in the https://github.com/aokranj/infrastructure repository.
-#
+# Intentionally empty.
+# Each developer has their own username.
+# Designated developers have access (via group membership) to files in /data/zl-stg/stg.zl.aokranj.com/ directory.
