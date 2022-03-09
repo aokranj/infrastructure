@@ -21,6 +21,7 @@
       - bash-completion
       - ca-certificates
       - curl
+      - gettext           # For .po -> .mo language/translation file conversion
       - git
       - gnupg
       - htop
