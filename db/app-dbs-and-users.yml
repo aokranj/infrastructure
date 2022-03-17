@@ -61,6 +61,10 @@
         password: "{{password_hash.mysql.app.ao_www_dev_b}}"
 
     -   role: app_db_and_user
+        dbandusername: "ao_www_dev_j"
+        password: "{{password_hash.mysql.app.ao_www_dev_j}}"
+
+    -   role: app_db_and_user
         dbandusername: "ao_www_stg"
         password: "{{password_hash.mysql.app.ao_www_stg}}"
 
