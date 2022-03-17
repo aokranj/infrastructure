@@ -13,6 +13,7 @@
     vars:
         # Common definition. Can be overridden for each individual admin below.
         additional_groups:
+            - "ao-dev"
             - "ao-stg"
             - "ao-prod"
             - "pd-stg"
@@ -26,6 +27,7 @@
         password: "{{password_hash.sys.bostjan}}"
         fullname: "Bostjan Skufca Jese"
         additional_groups:
+            - "ao-dev"
             - "ao-stg"
             - "ao-prod"
             - "pd-stg"
