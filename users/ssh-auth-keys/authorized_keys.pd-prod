@@ -2,3 +2,6 @@
 # This file is managed via Ansible.
 # The canonical version of this file is stored in the https://github.com/aokranj/infrastructure repository.
 #
+
+# GitHub Actions-based deployments
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCYKYIRAnQ1FZdq3k5J4mfZHOYAu+UjVNa+HFzKgmuiqDT/yiHQLQw9umxFMp+FUyCvFGi//heWvqIm2D+ekgV+d22ItE8p5BSTAS/iCRday8X6cLgjVpDg1AafJt9nJc8TfXZPICKFm6ncmnOxWNoapogRcoORbbX9HBG6xr4GIR5SvgfZ1indg+KbaCpIDXtBQGdu17qKpOeva+mlpgcTq8WvMS2CRWsbubM1irBNHkhMptZpjdsFFvftIS50CwmgCcX+NRRQoDbi8egh3qkGIYG9s7zWdz8JhqLonUM0UZzmr5WnV/+Sf5tFrMy7mrM7pxrhecWcKn056ewTNTlhoMrirHHNJd4WqWOmT3tdS1U5gg80BdEdIQG8wXBEV+d4ywyxxKHZ8gxeI58ce0HWZC8A27OI0eT1pGTpPNyawj/ZLLLjwvJ6iGercNAKnjhEkuukE+6aGLNiHU/47nxDo1yjwsQjaXcmN4utr8RJm/V8Ko1k+hxQYHFhMzKNT0= github-to-pd-prod@www.pdkranj.si
