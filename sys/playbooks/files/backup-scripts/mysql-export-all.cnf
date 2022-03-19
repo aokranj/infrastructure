@@ -1,0 +1,4 @@
+[client]
+host     = mariadb-svc
+user     = backup
+password = {{ password.mysql.backup }}

@@ -18,4 +18,6 @@ Then run the playbooks:
 ```
 ../bin/run-playbook admins.yml
 ../bin/run-playbook app-db-and-users.yml
+../bin/run-playbook backup.yml
+../bin/run-playbook devs.yml
 ```

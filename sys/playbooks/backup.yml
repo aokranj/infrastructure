@@ -1,0 +1,102 @@
+- hosts: localhost
+  connection: local
+  become: yes
+
+
+
+  vars_files:
+  -   secrets.yml
+
+
+
+  tasks:
+
+
+
+  ### Dirs
+  #
+  - name: "backup :: directory :: /backup"
+    ansible.builtin.file:
+      path: /backup
+      state: directory
+      owner: root
+      group: backup
+      mode: '0750'
+
+  - name: "backup :: directory :: /backup/daily"
+    ansible.builtin.file:
+      path: /backup/daily
+      state: directory
+      owner: root
+      group: backup
+      mode: '0750'
+
+  - name: "backup :: directory :: /backup/db-export"
+    ansible.builtin.file:
+      path: /backup/db-export
+      state: directory
+      owner: root
+      group: backup
+      mode: '0750'
+
+  - name: "backup :: directory :: /backup/db-export/mysql"
+    ansible.builtin.file:
+      path: /backup/db-export/mysql
+      state: directory
+      owner: root
+      group: backup
+      mode: '0750'
+
+  - name: "backup :: directory :: /backup/scripts"
+    ansible.builtin.file:
+      path: /backup/scripts
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+
+
+
+  ### Files
+  #
+  - name: "backup :: db-export :: mysql :: .my.cnf file"
+    ansible.builtin.template:
+      src: files/backup-scripts/mysql-export-all.cnf
+      dest: /backup/scripts/mysql-export-all.cnf
+      mode: 0600
+
+  - name: "backup :: db-export :: mysql :: script"
+    copy:
+      src: files/backup-scripts/mysql-export-all.sh
+      dest: /backup/scripts/mysql-export-all.sh
+      mode: 0755
+
+  - name: "backup :: db-import :: mysql :: script"
+    copy:
+      src: files/backup-scripts/mysql-import-dir.sh
+      dest: /backup/scripts/mysql-import-dir.sh
+      mode: 0755
+
+  - name: "backup :: sys :: daily run"
+    copy:
+      src: files/backup-scripts/backup-daily-run.sh
+      dest: /backup/scripts/backup-daily-run.sh
+      mode: 0755
+
+
+
+  ### Crons
+  #
+  - name: "backup :: cron :: db-export :: mysql"
+    ansible.builtin.cron:
+      name: "backup :: db-export :: mysql"
+      job: "/backup/scripts/mysql-export-all.sh /backup/db-export/mysql"
+      minute: "10"
+      hour: "1"
+
+  - name: "backup :: cron :: daily run"
+    ansible.builtin.cron:
+      name: "backup :: daily run"
+      job: "/backup/scripts/backup-daily-run.sh /backup/daily"
+      minute: "30"
+      hour: "1"

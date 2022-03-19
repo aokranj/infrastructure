@@ -1,0 +1,24 @@
+-   hosts: localhost
+    connection: local
+    become: no
+    gather_facts: no
+
+
+
+    vars_files:
+        -   secrets.yml
+
+
+
+    module_defaults:
+        community.mysql.mysql_user:
+            login_host: "mariadb-svc"
+
+
+
+    roles:
+    -   role: dev_user
+        username: "backup"
+        password: "{{password_hash.mysql.backup}}"
+        privileges:
+            '*.*': 'SELECT,SHOW DATABASES,SHOW VIEW,TRIGGER,LOCK TABLES,EVENT'

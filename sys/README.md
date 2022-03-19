@@ -20,6 +20,7 @@ ansible-playbook playbooks/php.yml
 ansible-playbook playbooks/security.yml
 
 ../bin/run-playbook playbooks/status-logging.yml
+../bin/run-playbook playbooks/backup.yml
 ```
 
 
