@@ -1,0 +1,5 @@
+/k8s/users/*.crt
+/k8s/users/*.crt.base64
+/k8s/users/*.csr
+/k8s/users/*.key
+/k8s/users/*.key.base64

@@ -19,7 +19,8 @@ Things to do when adding a new admin:
 (access to production)
 
 Things to do when adding a new admin:
-- (same as above, with the following adjustents)
+- (same as above, with the following adjustments)
 - Enable root access
+- Create dedicated kubernetes credentials ([guide](../k8s/users/README.md))
 - Create MariaDB "username-admin" user that has access to production databases
 - On GitHub, add them to the `masters` team
