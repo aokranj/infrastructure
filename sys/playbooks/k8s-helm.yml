@@ -1,0 +1,22 @@
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+
+
+  - name: "Add Helm APT signing key"
+    ansible.builtin.apt_key:
+      url: https://baltocdn.com/helm/signing.asc
+      keyring: /usr/share/keyrings/helm-signing-key.gpg
+
+
+  - name: "Add Helm APT repository"
+    ansible.builtin.apt_repository:
+      repo: deb [arch=amd64 signed-by=/usr/share/keyrings/helm-signing-key.gpg] https://baltocdn.com/helm/stable/debian/ all main
+      filename: helm
+
+
+  - name: "Install Helm"
+    apt:
+      pkg:
+      - helm
