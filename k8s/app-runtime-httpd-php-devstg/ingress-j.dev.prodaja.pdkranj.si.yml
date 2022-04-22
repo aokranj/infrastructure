@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: j-dev-knjiga-pdkranj-si-ing
+  name: j-dev-prodaja-pdkranj-si-ing
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
@@ -13,10 +13,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - j.dev.knjiga.pdkranj.si
-      secretName: certnkey-j-dev-knjiga-pdkranj-si
+      - j.dev.prodaja.pdkranj.si
+      secretName: certnkey-j-dev-prodaja-pdkranj-si
   rules:
-  - host: j.dev.knjiga.pdkranj.si
+  - host: j.dev.prodaja.pdkranj.si
     http:
       paths:
       - path: /
