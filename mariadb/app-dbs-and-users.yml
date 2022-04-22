@@ -42,15 +42,15 @@
 
 
 
-    ### PD knjiga.pdkranj.si
+    ### PD prodaja.pdkranj.si
     #
     -   role: app_db_and_user
-        dbandusername: "pd_knjiga_dev_j"
-        password: "{{password_hash.mysql.app.pd_knjiga_dev_j}}"
+        dbandusername: "pd_prodaja_dev_j"
+        password: "{{password_hash.mysql.app.pd_prodaja_dev_j}}"
 
     -   role: app_db_and_user
-        dbandusername: "pd_knjiga_prod"
-        password: "{{password_hash.mysql.app.pd_knjiga_prod}}"
+        dbandusername: "pd_prodaja_prod"
+        password: "{{password_hash.mysql.app.pd_prodaja_prod}}"
 
 
 

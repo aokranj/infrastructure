@@ -106,16 +106,16 @@
 
 
 
-    ### knjiga.pdkranj.si
+    ### prodaja.pdkranj.si
     #
-    -   name: 'knjiga A'
+    -   name: 'prodaja A'
         community.general.cloudflare_dns:
-            record: 'knjiga'
+            record: 'prodaja'
             type: 'A'
             value: '116.202.176.170'
 
-    -   name: 'j.dev.knjiga A'
+    -   name: 'j.dev.prodaja A'
         community.general.cloudflare_dns:
-            record: 'j.dev.knjiga'
+            record: 'j.dev.prodaja'
             type: 'A'
             value: '116.202.176.170'
