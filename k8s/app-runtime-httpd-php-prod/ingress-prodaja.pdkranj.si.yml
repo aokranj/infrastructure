@@ -6,9 +6,6 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
     nginx.ingress.kubernetes.io/default-backend: ingress-error-page-svc
-    nginx.ingress.kubernetes.io/auth-type: basic
-    nginx.ingress.kubernetes.io/auth-secret: auth-stg-pdkranj-si-secret
-    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - stg.pdkranj.si'
 spec:
   ingressClassName: nginx
   tls:
