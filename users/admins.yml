@@ -41,3 +41,8 @@
         username: "jnastran"
         password: "{{password_hash.sys.jnastran}}"
         fullname: "Janez Nastran"
+
+    -   role: admin_user
+        username: "bojan"
+        password: "{{password_hash.sys.bojan}}"
+        fullname: "Bojan Hribernik"

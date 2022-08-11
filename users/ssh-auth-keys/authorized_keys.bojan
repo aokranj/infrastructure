@@ -1,0 +1,6 @@
+#
+# This file is managed via Ansible.
+# The canonical version of this file is stored in the https://github.com/aokranj/infrastructure repository.
+#
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDhG4mAQbv7qLIrwngHV7X3X087HjPdxAg4nkFnVbH4kwQt4aDfkhilfkta+poWH4cV5QyGcjSp6WpyOXnyy2CuUUTF8Zemx7nlFubv2Wx6BHb5WFB01Erdswj/tK8Otjw5DhF0WbicLF4eCgQ8VVx3wRQMjH9EhwR8W/S3x+1+lDsK9CrRKn6rcv+M6pDZXlqcIny0mX+X2j0TVj/T4Tytm07g3jXdJrbfYBMPbGfmwhFWva1Lf4qKXUEAordUjSfu64Ws3QkGVs08MH21sHxaPXMIRI8o8+3taIOCErsxy5jfHq77Voys8EXgqvZKX0r4hp/zvDDsUavf0Eymri7/1uPjqVGdn7AbjvpiwtF4+d4JHWEkyBsMStKRPbeto3zjZKiZOuNK7Oo+WdRXybCAtl6kv5y1ieY74ku/b9QVri+61ZNUKc695HUjZRNCHGU74Bm4feUgZak9Bl535d3yqNLdGFScBed65zh6n8vt6sIkTUi+7Ms820CA9WmeXt8= bojan@ubuntu
