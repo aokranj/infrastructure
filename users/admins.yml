@@ -17,6 +17,7 @@
             - "ao-dev"
             - "ao-stg"
             - "ao-prod"
+            - "pd-dev"
             - "pd-stg"
             - "pd-prod"
 
@@ -32,6 +33,7 @@
             - "ao-dev"
             - "ao-stg"
             - "ao-prod"
+            - "pd-dev"
             - "pd-stg"
             - "pd-prod"
             - "zl-stg"
