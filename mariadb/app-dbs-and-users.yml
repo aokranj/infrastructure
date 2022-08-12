@@ -29,6 +29,10 @@
         password: "{{password_hash.mysql.app.pd_www_dev_b}}"
 
     -   role: app_db_and_user
+        dbandusername: "pd_www_dev_bojan"
+        password: "{{password_hash.mysql.app.pd_www_dev_bojan}}"
+
+    -   role: app_db_and_user
         dbandusername: "pd_www_dev_j"
         password: "{{password_hash.mysql.app.pd_www_dev_j}}"
 
@@ -59,6 +63,10 @@
     -   role: app_db_and_user
         dbandusername: "ao_www_dev_b"
         password: "{{password_hash.mysql.app.ao_www_dev_b}}"
+
+    -   role: app_db_and_user
+        dbandusername: "ao_www_dev_bojan"
+        password: "{{password_hash.mysql.app.ao_www_dev_bojan}}"
 
     -   role: app_db_and_user
         dbandusername: "ao_www_dev_j"
