@@ -100,3 +100,10 @@
       job: "/backup/scripts/backup-daily-run.sh /backup/daily"
       minute: "30"
       hour: "1"
+
+  - name: "backup :: cron :: daily purge"
+    ansible.builtin.cron:
+      name: "backup :: daily purge"
+      job: "/backup/scripts/backup-daily-dilute.sh /backup/daily"
+      minute: "30"
+      hour: "4"
