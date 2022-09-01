@@ -13,5 +13,4 @@
     -   role: sys_user
         username: "backup"
         password: "*"
-        fullname: ""
-        homedir: "/var/backups"
+        fullname: "Original homedir on Ubuntu was /var/backups"
