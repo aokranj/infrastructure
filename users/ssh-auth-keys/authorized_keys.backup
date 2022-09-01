@@ -1,0 +1,6 @@
+#
+# This file is managed via Ansible.
+# The canonical version of this file is stored in the https://github.com/aokranj/infrastructure repository.
+#
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDDaUTUR5cdzvaWhVKHjHPJvpWKrRdUg5xoXGCvdzmhtMfgT3B2BTjCRSPNpOU2yCMEkjCVVn0rUGydoddMNue97PHNY3UdGaZqs4avibkd4WEFYfso5vH4Oi6J/zhlqniIgWegmNF9bwOFDKwUzOlTDnnwo7e4P/lo3WIr3DK6JtthG2J/GfAFU5JxCf+l0ZeuXKxzMiiM6yRcGFHl0uyNvebydmzmTU8wkwUWCJkgGnS0nkGhGcQLhNVZF5IIDNCm7N7oBygo+/RRr5vAEzFZ1qCdcqfsoYIMpl/uOibS7T6k0ushJAbyzKu9dhGL5frWI8B33kct9V4ixCHZvGDgmQL2DZ/w3Z0FOJ1TmBnn15tJCdl+O8mZUzQjGP/wiTI0Iwgl2jGOF+NQDIQOTICM/8c/4ZZ+s7oKkqdb3J0elh8yhq7McmGD+FF+opj/z2z88uoBQuHJ30HJ2/0Czc8bb3xnwEqmBp/QVAOsqsaYScJqi1Ze+GmWr3ODDFaJiXM= backup@host1.srv.aokranj.com

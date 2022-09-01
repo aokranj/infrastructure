@@ -1,0 +1,2 @@
+default_home_prefix: "/home/"
+final_homedir: "{{ homedir | default(default_home_prefix + username) }}"
