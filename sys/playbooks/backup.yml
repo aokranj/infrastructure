@@ -13,6 +13,15 @@
 
 
 
+  ### Packages
+  #
+  - name: "Install backup-related packages"
+    apt:
+      pkg:
+      - rclone
+
+
+
   ### Dirs
   #
   - name: "backup :: directory :: /backup"
