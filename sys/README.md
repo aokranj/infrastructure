@@ -38,7 +38,7 @@ sudo kubeadm init \
 
 After you get kubectl working, install the Flannel networking plugin:
 ```
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f ../k8s/_flannel/kube-flannel.yml
 ```
 
 After that, add shell completion too (via `sudo -s`):
