@@ -14,18 +14,6 @@ Our runbooks are stored [here](docs/runbooks/).
 
 
 
-## Current infrastructure diagram
+## Infrastructure configuration diagram
 
-![Current infrastructure diagram](docs/web-server-config-diagram-current.drawio.png?raw=true "Current infrastructure diagram")
-
-
-
-## Target infrastructure diagram
-
-![Target infrastructure diagram](docs/web-server-config-diagram-desired.drawio.png?raw=true "Target infrastructure diagram")
-
-
-
-## Access to shared admin accounts
-
-For services that cannot be managed with a per-user accounts, shared access credentials are stored [in this Gdoc document](https://docs.google.com/document/d/14AWf-AGrkmL9sXSIKNZtTy6fsr2FF014JLQlkA4WLAw).
+![Infrastructure configuration diagram](docs/web-server-config-diagram.drawio.png?raw=true "Infrastructure configuration diagram")
