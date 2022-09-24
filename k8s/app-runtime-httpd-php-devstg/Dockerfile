@@ -37,6 +37,7 @@ RUN apt-get update \
         php-mbstring \
         php-mysql \
         php-sqlite3 \
+        php-xdebug \
         php-xml \
         php-zip \
         ssmtp \
