@@ -6,16 +6,31 @@
 
 
     vars:
-        # Common definition. Can be overridden for each individual admin below.
-#        additional_groups:
-#            - "ao-stg"
-#            - "ao-prod"
-#            - "pd-stg"
-#            - "pd-prod"
+        # Common definition. Can be overridden for each individual developer below.
+        additional_groups:
+            - "backup"
+            - "ao-dev"
+            - "ao-stg"
+            - "pd-dev"
+            - "pd-stg"
 
 
 
     roles:
+
+
+
+    ### AO/PD
+    #
+    -   role: dev_user
+        username: "jmarcun"
+        password: "*"
+        fullname: "Jernej Marcun"
+
+
+
+    ### Zahodna Liga
+    #
     -   role: dev_user
         username: "gregork"
         password: "*"
