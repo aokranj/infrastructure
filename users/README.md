@@ -2,6 +2,14 @@
 
 
 
+## Install the Ansible collection
+
+```
+ansible-galaxy collection install ansible.posix
+```
+
+
+
 ## Check if all accounts are set up as intended
 
 ```

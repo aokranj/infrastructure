@@ -33,6 +33,14 @@
         group: "{{username}}"
         mode: "{{datadir_mode}}"
 
+-   name: "{{username}} : data directory /data/{{username}} : allow access for www-user (via xattr)"
+    ansible.posix.acl:
+        path: "/data/{{username}}"
+        etype: user
+        entity: www-data
+        permissions: rx
+        state: present
+
 -   name: "{{username}} : convenience symlink /home/{{username}}/www -> /data/{{username}}"
     file:
         path: "/home/{{username}}/www"
