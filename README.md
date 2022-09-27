@@ -10,10 +10,10 @@ AO Kranj and PD Kranj web resources are hosted with the following providers:
 
 ## Runbooks for common tasks
 
-Our runbooks are stored [here](docs/runbooks/).
+Our runbooks are stored [here](doc/runbook/).
 
 
 
-## Infrastructure configuration diagram
+## Infrastructure diagram
 
-![Infrastructure configuration diagram](docs/web-server-config-diagram.drawio.png?raw=true "Infrastructure configuration diagram")
+![Infrastructure configuration diagram](doc/infrastructure-diagram.drawio.png?raw=true "Infrastructure diagram")
