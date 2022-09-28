@@ -32,6 +32,11 @@
         password: "*"
         fullname: "Jernej Marcun"
 
+    -   role: dev_user
+        username: "jstern"
+        password: "*"
+        fullname: "Jernej Stern"
+
 
 
     ### Zahodna Liga

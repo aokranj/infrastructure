@@ -56,6 +56,17 @@
             '%\_old.*': 'ALL'
             '%\_old\_%.*': 'ALL'
 
+    # Jernej Stern
+    -   role: dev_user
+        username: "jstern"
+        password: "{{password_hash.mysql.dev.jstern}}"
+        privileges:
+            '%\_dev\_%.*': 'ALL'
+            '%\_stg.*': 'ALL'
+            '%\_stg\_%.*': 'ALL'
+            '%\_old.*': 'ALL'
+            '%\_old\_%.*': 'ALL'
+
     # Gregor Kokalj (Zahodna liga)
     -   role: dev_user
         username: "gregork"
