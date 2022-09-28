@@ -17,6 +17,17 @@
 
 
     roles:
+    # Andraz Jelenc
+    -   role: dev_user
+        username: "ajelenc"
+        password: "{{password_hash.mysql.dev.ajelenc}}"
+        privileges:
+            '%\_dev\_%.*': 'ALL'
+            '%\_stg.*': 'ALL'
+            '%\_stg\_%.*': 'ALL'
+            '%\_old.*': 'ALL'
+            '%\_old\_%.*': 'ALL'
+
     # Bostjan Skufca Jese
     -   role: dev_user
         username: "bostjan"

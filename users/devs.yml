@@ -23,6 +23,11 @@
     ### AO/PD
     #
     -   role: dev_user
+        username: "ajelenc"
+        password: "*"
+        fullname: "Andraz Jelenc"
+
+    -   role: dev_user
         username: "jmarcun"
         password: "*"
         fullname: "Jernej Marcun"
