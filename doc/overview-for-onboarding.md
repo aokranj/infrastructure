@@ -18,7 +18,7 @@ AO Kranj and PD Kranj web resources are hosted with the following providers:
 
 ## Web infrastructure diagram
 
-![Infrastructure configuration diagram](docs/infrastructure-diagram.drawio.png?raw=true "Infrastructure diagram")
+![Infrastructure diagram](infrastructure-diagram.drawio.png?raw=true "Infrastructure diagram")
 
 
 
@@ -27,15 +27,15 @@ AO Kranj and PD Kranj web resources are hosted with the following providers:
 As or late 2022, we're handling the following ([WordPress](https://wordpress.org/)-based) websites:
 * [aokranj.com](https://www.aokranj.com)
 * [pdkranj.si](https://www.pdkranj.si)
-* [prodaja.pdkranj.si](prodaja.pdkranj.si) (mainly handled by @jnastran)
+* [prodaja.pdkranj.si](https://prodaja.pdkranj.si) (mainly handled by @jnastran)
 
 We'll use `aokranj.com` as an example in sections below.
 
 
 
-### Git repo structure
+### Git repository structure
 
-These are the main elements of our WordPress repo:
+These are the main elements of each of our WordPress repositories:
 
 | Location                                      | Description                  |
 |-----------------------------------------------|------------------------------|
@@ -64,7 +64,7 @@ A guide for setting it up is located in the [doc/docker-dev-environment.md](http
 As of this writing (late 2022), local development environment is Linux- and Mac-centric,
 since Windows support has not been needed yet.
 
-Generally, `Dockerfile` and PHP/HTTPD configuration used for [local development environment] (https://github.com/aokranj/website-aokranj.com/blob/master/docker/Dockerfile)
+Generally, `Dockerfile` and PHP/HTTPD configuration used for [local development environment](https://github.com/aokranj/website-aokranj.com/blob/master/docker)
 and for [devstg](../k8s/app-runtime-httpd-php-devstg) and [prod](../k8s/app-runtime-httpd-php-devstg) runtime should be kept in sync.
 
 
