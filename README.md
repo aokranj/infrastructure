@@ -1,19 +1,17 @@
-# Web infrastructure
-
-AO Kranj and PD Kranj web resources are hosted with the following providers:
-- Domain registration: GoDaddy (for aokranj.com), Zabec.net (for pdkranj.si)
-- DNS provider: CloudFlare
-- Web hosting provider: [Hetzner](https://console.hetzner.cloud) (the new Cloud offerings)
-- Mail hosting provider: [Google](admin.google.com) (Google Workspace for non-profits)
+# Web infrastructure - AO Kranj
 
 
 
 ## Runbooks for common tasks
+<!-- Keep this section at the top - in a pinch, you really need to find this link quickly. -->
 
-Our runbooks are stored [here](docs/runbooks/).
+Our runbooks are stored [here](doc/runbook/).
 
 
 
-## Infrastructure configuration diagram
+## Overview and onboarding
 
-![Infrastructure configuration diagram](docs/web-server-config-diagram.drawio.png?raw=true "Infrastructure configuration diagram")
+Here is an [overview & onboarding](doc/overview-for-onboarding.md) document containing the infrastructure overview and pointers to further resources.
+
+Here is a sneak peek of our infrastructure:
+![Infrastructure diagram](doc/infrastructure-diagram.drawio.png?raw=true "Infrastructure diagram")
