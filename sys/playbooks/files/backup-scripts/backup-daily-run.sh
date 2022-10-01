@@ -108,13 +108,23 @@ fi
 # Files
 for DATADIR in `ls /data | grep -E '[-](stg|prod)$'` ; do
     _echo "Backing up /data/$DATADIR:"
-    rsync -av --numeric-ids --delete /data/$DATADIR $SUBVOLUME_PATH_INPROGRESS/
+    rsync -avX --numeric-ids --delete /data/$DATADIR $SUBVOLUME_PATH_INPROGRESS/
+
+    # Rsync does not transfer over the system.* attributes.
+    # Keep this section in sync with aokranj/infrasutrcture/users/roles/app_user.
+    setfacl -m u:backup:rx $SUBVOLUME_PATH_INPROGRESS/$DATADIR
+
     _echo "  Backing up of /data/$DATADIR complete."
 done
 
 # Db exports
 _echo "Backing up /backup/db-export:"
-rsync -av --numeric-ids --delete /backup/db-export $SUBVOLUME_PATH_INPROGRESS/
+rsync -avX --numeric-ids --delete /backup/db-export $SUBVOLUME_PATH_INPROGRESS/
+
+# Rsync does not transfer over the system.* attributes.
+# Keep this section in sync with aokranj/infrasutrcture/users/roles/app_user.
+setfacl -m u:backup:rx $SUBVOLUME_PATH_INPROGRESS/db-export
+
 _echo "  Backing up of /backup/db-export complete."
 
 
