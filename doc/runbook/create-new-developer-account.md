@@ -5,6 +5,7 @@
 ## Request from the new developer
 
 Request the following things from the new developer:
+* Email address
 * Their GitHub handle
 * (Preferred username - try to use the GitHub handle)
 * Their public SSH key(s)
@@ -14,6 +15,13 @@ Request the following things from the new developer:
 
 
 ## Create accounts
+
+
+### Slack
+
+Send an invite to [`aokranj` Slack workspace](https://aokranj.slack.com) to the new developer's email address.
+
+
 
 ### Github
 
@@ -39,7 +47,7 @@ Create a new MySQL account via the [mariadb/devs.yml](../../mariadb/devs.yml) pl
 
 
 
-### Kubernetes access vhost(s)
+### Kubernetes access
 
 Not yet at this point.
 
