@@ -91,7 +91,7 @@
         community.general.cloudflare_dns:
             record: 'mail-out'
             type: 'A'
-            value: '116.203.29.132'
+            value: '116.202.176.170'
 
 
 
