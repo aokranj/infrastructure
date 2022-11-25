@@ -7,6 +7,7 @@
 #set -e   # Must not be set, or else one failed command will prevent further processin
 #
 set -u
+export PATH="$PATH:/usr/sbin"   # For iotop
 
 
 
