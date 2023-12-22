@@ -39,6 +39,19 @@
 
 
 
+    ### GRS
+    #
+    -   role: dev_user
+        username: "roobn0"
+        password: "*"
+        fullname: "Ruben Lasan"
+        additional_groups:
+            - "backup"
+            - "grs-stg"
+            - "grs-prod"
+
+
+
     ### Zahodna Liga
     #
     -   role: dev_user

@@ -74,3 +74,10 @@
         privileges:
             'zl\_%.*': 'ALL'
         state: absent   # Confirmed via email he doesn't need this user
+
+    # Ruben Lasan (GRS)
+    -   role: dev_user
+        username: "roobn0"
+        password: "{{password_hash.mysql.dev.roobn0}}"
+        privileges:
+            'grs\_%.*': 'ALL'
