@@ -47,8 +47,10 @@
         fullname: "Ruben Lasan"
         additional_groups:
             - "backup"
+            - "ao-stg"
             - "grs-stg"
             - "grs-prod"
+            - "pd-stg"
 
 
 
