@@ -1,0 +1,6 @@
+#
+# This file is managed via Ansible.
+# The canonical version of this file is stored in the https://github.com/aokranj/infrastructure repository.
+#
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAOTK49SYOuF051jRiPfRHqsidwyIRB9MF9DmzrEzLjA ruben@DESKTOP-8E34DQE

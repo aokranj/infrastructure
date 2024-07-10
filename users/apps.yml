@@ -23,6 +23,16 @@
 
 
 
+    ### GRS
+    #
+    -   role: app_user
+        username: "grs-stg"
+
+    -   role: app_user
+        username: "grs-prod"
+
+
+
     ### PD
     #
     -   role: app_user
