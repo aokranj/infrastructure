@@ -55,3 +55,20 @@
   - name: "Restart docker.service"
     command: "systemctl restart docker.service"
     when: systemd_daemon_reload.changed
+
+
+
+  ### Crons
+  #
+  - name: "docker :: logs :: truncate :: script"
+    copy:
+      src: files/docker-logs-truncate.sh
+      dest: /root/docker-logs-truncate.sh
+      mode: 0755
+
+  - name: "docker :: logs :: truncate :: cron"
+    ansible.builtin.cron:
+      name: "docker :: logs :: truncate"
+      job: "/root/docker-logs-truncate.sh"
+      minute: "9"
+      hour: "4"
