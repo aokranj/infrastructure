@@ -1,6 +1,6 @@
 ### Base to start with
 #
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 
 
@@ -29,7 +29,7 @@ RUN apt-get update \
         libxml2-dev \
         zlib1g-dev \
         apache2 \
-        libapache2-mod-php7.4 \
+        libapache2-mod-php8.3 \
         php-curl \
         php-gd \
         php-imagick \
