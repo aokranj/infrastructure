@@ -26,3 +26,10 @@
       src: files/composer
       dest: /usr/local/bin/composer
       mode: 0755
+
+
+  - name: "Symlink /usr/bin/mariadb-dump to mysqldump"
+    ansible.builtin.file:
+      src: mysqldump
+      dest: /usr/bin/mariadb-dump
+      state: link
