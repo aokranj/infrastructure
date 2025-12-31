@@ -1,6 +1,7 @@
-### Base to start with
+### Base to start with + "arguments"
 #
 FROM ubuntu:24.04
+ARG PHP_VERSION="8.3"
 
 
 
@@ -30,7 +31,7 @@ RUN apt-get update \
         zlib1g-dev \
         apache2 \
         libapache2-mod-auth-mellon \
-        libapache2-mod-php8.3 \
+        libapache2-mod-php${PHP_VERSION} \
         php-curl \
         php-gd \
         php-imagick \
@@ -60,7 +61,7 @@ ADD  conf/apache2/sites-enabled /etc/apache2/sites-enabled
 COPY conf/php/opcache.php       /var/lib/php/opcache.php
 COPY conf/php/phpinfo.php       /var/lib/php/phpinfo.php
 COPY conf/php/prepend.php       /var/lib/php/prepend.php
-COPY conf/php/conf.d            /etc/php/7.4/apache2/conf.d
+COPY conf/php/conf.d            /etc/php/${PHP_VERSION}/apache2/conf.d
 COPY conf/ssmtp/ssmtp.conf      /etc/ssmtp/ssmtp.conf
 
 
