@@ -146,6 +146,16 @@
 
 
 
+    ### Ostalo
+    #
+    -   name: 'stenca CNAME'
+        community.general.cloudflare_dns:
+            record: 'stenca'
+            type: 'CNAME'
+            value: 'setterapp-c3001.web.app'
+
+
+
     ### Development
     #
     -   name: 'tools.dev A'
