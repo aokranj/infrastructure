@@ -82,6 +82,18 @@
 
 
 
+    ### GRS
+    #
+    -   role: app_db_and_user
+        dbandusername: "grs_stg"
+        password: "{{password_hash.mysql.app.grs_stg}}"
+
+    -   role: app_db_and_user
+        dbandusername: "grs_prod"
+        password: "{{password_hash.mysql.app.grs_prod}}"
+
+
+
     ### ZL zl.aokranj.com
     #
     -   role: app_db_and_user
