@@ -29,6 +29,7 @@
       - lsb-release
       - lynx
       - mc
+      - mlocate           # Apparently some people use this
       - python3-pymysql   # For Ansible's MySQL management module
       - rsyslog           # `apt autoremove` removed this one for some reason
       - nano
@@ -39,3 +40,9 @@
       pkg:
       - cowsay   # This one makes ansible output be full of cows, literally.
       state: absent
+
+  - name: "Configured 'mlocate'"
+    copy:
+      src: files/updatedb.conf
+      dest: /etc/updatedb.conf
+      mode: 0644
